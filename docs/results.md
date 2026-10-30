@@ -1,3 +1,5 @@
+> Historical frozen v3 report, written before official upload. The later acceptance event is in [official_submission_v3.md](official_submission_v3.md): submission57795106 COMPLETE / Public0.15. Original v3 scores below are unchanged.
+
 # Results recorded 2026-10-30
 
 The Kaggle v3 run completed. Its downloaded canonical artifacts are under

@@ -119,3 +119,5 @@ The four-page report sources are in `report/latex_v4/`. Follow
 Google Form. Publishing this repository and generating a report do not constitute
 form submission. Participant identity, contact information, attestations and any
 required manual final steps remain the participant's responsibility.
+
+Associated public competition code page: https://www.kaggle.com/code/mengxinlab/solar-filament-2026-reproducible-release . It is public and completed on CPU, with training/inference opt-in, and does not consume GPU quota or repeat frozen results.

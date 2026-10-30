@@ -11,7 +11,7 @@ The form's live fields have not been inspected in this preparation task. The ite
 ## Required deliverables from the official Overview
 
 - [ ] **One four-page technical-report PDF**, using the [organizer's Overleaf template](https://www.overleaf.com/read/vjztpvrnbrdh#43fbbe). Draft source: `report/v4_technical_report_draft.md`. Compile into the requested template and check that the final PDF is exactly four pages and legible; this Markdown draft has not itself established pagination.
-- [ ] **Public Git-based repository URL.** The committee must access the complete code without permission requests. Fill the participant-approved final URL: `[public repository URL]`. No GitHub repository was created by this task.
+- [ ] **Public Git-based repository URL.** The committee must access the complete code without permission requests. Fill the participant-approved final URL: [mengxinlab/solar-filament-2026-reproducible](https://github.com/mengxinlab/solar-filament-2026-reproducible). The public repository and associated Kaggle code page are now published.
 - [ ] **Pinned `requirements.txt`**, including all packages used by the released pipeline. Retain the exact Kaggle runtime freeze and the wheel/source provenance needed for offline execution. Explain installation and hardware assumptions.
 - [ ] **A Jupyter notebook illustrating the entire pipeline.** Include data acquisition instructions, preprocessing, split construction, training, instance conversion, evaluation and final inference. The final notebook must point to the released selected model and use the exact code/config version, not an interrupted local run.
 - [ ] **Selected model weights or parameters stored in the repository.** For ML/DL selections, provide the trained weights and load them in the notebook so predictions reproduce without retraining. For a classical selection, provide the selected parameter file and complete preprocessing/postprocessing code. Required artifacts must not depend on private or expiring download permissions.
@@ -55,3 +55,9 @@ These are preparation prompts, not claims about the current form's exact field s
 ## Final handoff
 
 Before the participant submits the form, the reviewable package should contain the four-page PDF, working public repository URL, notebook, selected weights/parameters, pinned requirements, canonical experiment table and official Kaggle receipt. Mark each unready item as pending rather than presenting this draft as a final submission.
+
+## Published working release
+
+- Public Git: https://github.com/mengxinlab/solar-filament-2026-reproducible
+- Associated competition notebook: https://www.kaggle.com/code/mengxinlab/solar-filament-2026-reproducible-release
+- These are code publications, not Google Form submission. Final report/results and participant identity remain release gates.
