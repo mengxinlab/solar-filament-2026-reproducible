@@ -5,10 +5,72 @@ Reproducible grayscale H-alpha instance segmentation for the
 This release separates a frozen accepted v3 submission from prespecified V4
 development experiments. It redistributes no competition images or annotations.
 
+Author: **Xin Meng**, China Medical University — [mengxinlab@gmail.com](mailto:mengxinlab@gmail.com).
+
 The frozen v3 CSV received platform status **COMPLETE**, Public Score **0.15**,
 submission ID **57795106**. This result verifies official submission acceptance;
 it is not used to choose thresholds, architectures or postprocessing.
 See [the official submission record](docs/official_submission_v3.md).
+
+## Final V4 decision: stop additional GPU work
+
+The best **VALID** V4 development result is `raw_radius_group`, PQ
+**0.127734948**, below the frozen classical reference **0.177047225**.
+The selected release therefore remains the accepted classical v3 configuration.
+The finite prespecified V4 comparison did not justify further GPU allocation.
+No training, inference, threshold scan or additional GPU run is scheduled by this
+release; the reproduction commands below describe explicit historical reruns.
+Notebook execution remains opt-in with `RUN=False` by default.
+
+| Result | Development PQ | Status |
+|---|---:|---|
+| Frozen classical reference | 0.177047225 | VALID, selected |
+| V4 `raw_radius_group` | 0.127734948 | VALID, below reference |
+| V4 `flat_radius_cc` | See preserved table | **INVALID preprocessing control** |
+| V4 `flat_radius_group` | See preserved table | **INVALID preprocessing control** |
+
+Both flat arms encountered empty annuli in the 256²/128-ring estimator, causing
+undefined medians and invalid corrected input. Their original PQ/counts/costs are
+preserved as historical outputs, but cannot establish whether limb correction
+helps or hurts. The original `v4_model.py` is retained to reproduce that failure.
+The separate repair `src/solarseg/v4_photometry.py` estimates rings from native
+2048² pixels, requires nonempty finite medians, and fills no missing rings.
+It passed **one CPU real-case finite-output regression only**; it is not wired
+into the historical experiment and has **no new GPU performance score**.
+See [the failure evidence](diagnostics/v4/p4_radial_failure.md).
+The public regression-test copy writes fresh outputs only to pytest's temporary
+directory, so it cannot overwrite the published failure records. Its original
+image input requires the participant's official competition data under the
+standard `data/raw/MAGFiLO_1.0_Kaggle_2026/` path; no image is bundled.
+
+Full evidence: [V4 report](docs/v4_results.md), [canonical JSON](docs/v4_evidence.json),
+[comparison](docs/v4_comparison.csv), [per-year counts](docs/v4_per_year.csv),
+[training exposure](docs/v4_training_exposure.csv) and
+[training histories](docs/v4_training_history.csv).
+
+Two documented failure examples are `20120703070814Th` (weak, long thin filaments
+missed: **0 TP / 24 FP / 43 FN**) and `20171029150150Bh` (solar-limb false
+positives: **0 TP / 51 FP / 15 FN**). Counts pool all independent annotator-image
+records; an illustrative image overlay shows one annotator rather than that
+pooled set. These examples diagnose failure and do not choose new thresholds.
+
+## Historical V4 checkpoints and exact runtime
+
+[evidence/v4/](evidence/v4/README.md) contains all **six historical experiment
+checkpoints**, fold configs, train IDs, sample draws, histories, probability and
+per-image score summaries, compute/hardware/source provenance, the original
+execution log and the actual Kaggle `requirements-runtime.txt` package freeze.
+These checkpoints are provided for traceability and reproduction, **not as selected
+models**. The selected release remains the frozen classical parameters.
+
+Both flat arms remain **INVALID**. The unmodified historical
+[`decision.json`](evidence/v4/decision.json) may rank a flat arm using its raw score;
+that pre-adjudication program output must not choose a release model. The explicit
+[`validity_adjudication.json`](evidence/v4/validity_adjudication.json) and
+[V4 result report](docs/v4_results.md) control the interpretation. The native repair
+has only its recorded CPU single-case validation and no replacement GPU result.
+No RLE OOF prediction CSV, failure image, cache or raw competition data is included
+in this historical package. No further GPU run is justified by these artifacts.
 
 ## Reproduction on ordinary Kaggle GPU
 
@@ -82,8 +144,8 @@ Official platform acceptance remains distinct from local format validation.
   No external MAGFiLO annotations, test-label lookup or public submissions are used.
 - All annotators of a physical image share its split. V4 uses the fixed development
   years 2011–2019, with a 27-day training embargo around validation observations.
-- The 2020–2022 holdout retains its one frozen v3 evaluation. Its labels do not
-  enter V4. The v3 development PQ 0.17705 and holdout PQ 0.10560 use different
+- The **49-image 2020–2022 holdout retains its one frozen v3 evaluation**. Its
+  labels do not enter V4 or the native photometry repair case. The v3 development PQ 0.17705 and holdout PQ 0.10560 use different
   periods; the decline limits the performance claim.
 - The host's PQ definition uses strict IoU>0.5, independent annotator-image
   comparisons and accumulated counts. See the
@@ -93,9 +155,9 @@ Official platform acceptance remains distinct from local format validation.
 - [V4 plan](docs/v4_experiment_plan.md) fixes native 512 crops, equal foreground/disk
   sampling, 384 updates per fold, raw/radius versus limb-corrected/radius channels,
   and two instance aggregation controls. Report unsuccessful arms as well.
-- [V3 results](docs/results.md) and [U-Net diagnosis](diagnostics/v4/p2_unet_diagnosis.md)
-  are supplied. V4 result documentation and the compiled technical PDF are added
-  when canonical experiments are complete; no pending value is invented.
+- [V3 results](docs/results.md), [U-Net diagnosis](diagnostics/v4/p2_unet_diagnosis.md),
+  and the final [V4 results](docs/v4_results.md) are supplied. Invalid flat-arm
+  outcomes are retained with their status, not used as valid normalization evidence.
 
 `requirements.txt` and `requirements-kaggle.txt` pin the packages used in the completed Kaggle GPU runtime. `requirements-local-v3.txt` preserves the earlier local development environment. Every V4 kernel saves its own full package freeze, source manifest,
 hardware record, sample draws, losses, prediction CSVs, PQ counts and compute cost.
@@ -112,7 +174,7 @@ project's temporal holdout. Full notices are in `THIRD_PARTY_NOTICES.md` and
 `third_party/`. Dependency and detector/model licenses are separate; this release
 does not relicense them as MIT or bundle Ultralytics/YOLO weights.
 
-The four-page report sources are in `report/latex_v4/`. Follow
+The four-page technical PDF is linked at [report/solar_filament_technical_report.pdf](report/solar_filament_technical_report.pdf); it is compiled and visually verified at exactly four pages, with participant-supplied author details. The report sources are in `report/latex_v4/`. Follow
 `report/google_form_checklist.md` before the participant completes the official
 Google Form. Publishing this repository and generating a report do not constitute
 form submission. Participant identity, contact information, attestations and any

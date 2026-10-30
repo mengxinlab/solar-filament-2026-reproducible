@@ -1,0 +1,420 @@
+{
+  "decision": {
+    "candidate": "flat_radius_group",
+    "best": {
+      "global": {
+        "pq": 0.1396276602228051,
+        "tp": 2261,
+        "fp": 10382,
+        "fn": 5663,
+        "sum_iou": 1435.8610439012161,
+        "observations": 658,
+        "annotator_image_records": 1079
+      },
+      "per_fold": {
+        "0": {
+          "pq": 0.141781172904463,
+          "tp": 947,
+          "fp": 3794,
+          "fn": 2784,
+          "sum_iou": 600.5850484233052,
+          "observations": 279,
+          "annotator_image_records": 467
+        },
+        "1": {
+          "pq": 0.14462274891600913,
+          "tp": 1119,
+          "fp": 5036,
+          "fn": 2580,
+          "sum_iou": 712.556283909177,
+          "observations": 268,
+          "annotator_image_records": 428
+        },
+        "2": {
+          "pq": 0.10952227716977604,
+          "tp": 195,
+          "fp": 1552,
+          "fn": 299,
+          "sum_iou": 122.71971156873406,
+          "observations": 111,
+          "annotator_image_records": 184
+        }
+      },
+      "per_year": {
+        "2011": {
+          "pq": 0.14679212553005797,
+          "tp": 284,
+          "fp": 1090,
+          "fn": 782,
+          "sum_iou": 179.0863931466707,
+          "observations": 86,
+          "annotator_image_records": 150
+        },
+        "2012": {
+          "pq": 0.13599386189445237,
+          "tp": 319,
+          "fp": 1355,
+          "fn": 978,
+          "sum_iou": 202.01888184420898,
+          "observations": 92,
+          "annotator_image_records": 161
+        },
+        "2013": {
+          "pq": 0.1434039682668576,
+          "tp": 344,
+          "fp": 1349,
+          "fn": 1024,
+          "sum_iou": 219.4797734324256,
+          "observations": 101,
+          "annotator_image_records": 156
+        },
+        "2014": {
+          "pq": 0.16286676620894683,
+          "tp": 512,
+          "fp": 1923,
+          "fn": 1095,
+          "sum_iou": 329.15373450828156,
+          "observations": 102,
+          "annotator_image_records": 161
+        },
+        "2015": {
+          "pq": 0.12554808123103323,
+          "tp": 353,
+          "fp": 1930,
+          "fn": 913,
+          "sum_iou": 222.78507014446848,
+          "observations": 86,
+          "annotator_image_records": 140
+        },
+        "2016": {
+          "pq": 0.14195093173347492,
+          "tp": 254,
+          "fp": 1183,
+          "fn": 572,
+          "sum_iou": 160.61747925642686,
+          "observations": 80,
+          "annotator_image_records": 127
+        },
+        "2017": {
+          "pq": 0.11370316417339589,
+          "tp": 152,
+          "fp": 1141,
+          "fn": 233,
+          "sum_iou": 95.39695474147915,
+          "observations": 71,
+          "annotator_image_records": 118
+        },
+        "2018": {
+          "pq": 0.09621322105981765,
+          "tp": 28,
+          "fp": 275,
+          "fn": 38,
+          "sum_iou": 17.751339285536357,
+          "observations": 26,
+          "annotator_image_records": 42
+        },
+        "2019": {
+          "pq": 0.09867440764658311,
+          "tp": 15,
+          "fp": 136,
+          "fn": 28,
+          "sum_iou": 9.571417541718562,
+          "observations": 14,
+          "annotator_image_records": 24
+        }
+      },
+      "metric": "v3 score_frames counts pooled; strict IoU > 0.5 per annotator-image",
+      "numerical_note": "float64 COCO IoU; official float32 overlap can differ at threshold rounding"
+    },
+    "baseline": {
+      "pq": 0.17704722518489124,
+      "tp": 2245,
+      "fp": 6084,
+      "fn": 5679,
+      "sum_iou": 1438.7742754650187,
+      "folds": {
+        "0": 0.17420645966467033,
+        "1": 0.17700775951698644,
+        "2": 0.1981921814043778
+      }
+    },
+    "periods_improved": 0,
+    "continue_gpu": false,
+    "rule": {
+      "pooled_pq_min": 0.19704722518489123,
+      "periods_improved_min": 2,
+      "minimum_period_pq": 0.05,
+      "max_actual_gpu_session_hours": 2.0
+    },
+    "elapsed_seconds": 3427.582666888,
+    "interpretation": "Budget gate on reused development groups, not independent validation or significance",
+    "holdout_policy": "v3 single frozen holdout result retained; V4 does not inspect or score its labels",
+    "next_action": "Stop additional GPU spending; retain official v3 baseline",
+    "automatic_further_runs": false
+  },
+  "hardware": {
+    "name": "Tesla T4",
+    "capability": [
+      7,
+      5
+    ],
+    "vram_bytes": 15636037632,
+    "cuda_available": true,
+    "torch_threads": 4,
+    "requested_machine_shape": "Gpu",
+    "kernel": "mengxinlab/solar-filament-v4-native-20261030",
+    "session_timeout_seconds": 7200
+  },
+  "compute": [
+    {
+      "variant": "raw_radius",
+      "fold": 0,
+      "train_images": 375,
+      "validation_images": 279,
+      "updates": 384,
+      "training_seconds": 217.86842986500005,
+      "inference_seconds": 347.597477723,
+      "peak_cuda_memory_bytes": 2237306880,
+      "inference_tiles_per_image": 25,
+      "tta": false
+    },
+    {
+      "variant": "raw_radius",
+      "fold": 1,
+      "train_images": 379,
+      "validation_images": 268,
+      "updates": 384,
+      "training_seconds": 212.51904849099992,
+      "inference_seconds": 302.90585658400005,
+      "peak_cuda_memory_bytes": 2237306880,
+      "inference_tiles_per_image": 25,
+      "tta": false
+    },
+    {
+      "variant": "raw_radius",
+      "fold": 2,
+      "train_images": 540,
+      "validation_images": 111,
+      "updates": 384,
+      "training_seconds": 220.60135052199985,
+      "inference_seconds": 140.662847155,
+      "peak_cuda_memory_bytes": 2237306880,
+      "inference_tiles_per_image": 25,
+      "tta": false
+    },
+    {
+      "variant": "flat_radius",
+      "fold": 0,
+      "train_images": 375,
+      "validation_images": 279,
+      "updates": 384,
+      "training_seconds": 210.61010943200017,
+      "inference_seconds": 400.2345223110001,
+      "peak_cuda_memory_bytes": 2237306880,
+      "inference_tiles_per_image": 25,
+      "tta": false
+    },
+    {
+      "variant": "flat_radius",
+      "fold": 1,
+      "train_images": 379,
+      "validation_images": 268,
+      "updates": 384,
+      "training_seconds": 210.17848681099986,
+      "inference_seconds": 434.5228985120002,
+      "peak_cuda_memory_bytes": 2237306880,
+      "inference_tiles_per_image": 25,
+      "tta": false
+    },
+    {
+      "variant": "flat_radius",
+      "fold": 2,
+      "train_images": 540,
+      "validation_images": 111,
+      "updates": 384,
+      "training_seconds": 218.02569454100012,
+      "inference_seconds": 157.6544923209999,
+      "peak_cuda_memory_bytes": 2237306880,
+      "inference_tiles_per_image": 25,
+      "tta": false
+    }
+  ],
+  "cache_preprocessing_seconds": 339.100538652,
+  "training_exposure": [
+    {
+      "variant": "raw_radius",
+      "fold": 0,
+      "draws": 1536,
+      "distinct_training_images": 368,
+      "foreground_centered_draws": 768,
+      "mean_positive_fraction": 0.008691367007950597,
+      "empty_crop_fraction": 0.232421875,
+      "final_training_loss": 0.757068275163571,
+      "final_train_foreground_probability": 0.4766701962563398,
+      "final_train_background_probability": 0.0099070511182323
+    },
+    {
+      "variant": "raw_radius",
+      "fold": 1,
+      "draws": 1536,
+      "distinct_training_images": 374,
+      "foreground_centered_draws": 768,
+      "mean_positive_fraction": 0.008694736160440628,
+      "empty_crop_fraction": 0.220703125,
+      "final_training_loss": 0.9554880708456039,
+      "final_train_foreground_probability": 0.33794036785730075,
+      "final_train_background_probability": 0.033571490499566786
+    },
+    {
+      "variant": "raw_radius",
+      "fold": 2,
+      "draws": 1536,
+      "distinct_training_images": 507,
+      "foreground_centered_draws": 768,
+      "mean_positive_fraction": 0.010388074226831601,
+      "empty_crop_fraction": 0.17838541666666666,
+      "final_training_loss": 0.7394580530623595,
+      "final_train_foreground_probability": 0.46944805095665487,
+      "final_train_background_probability": 0.009649014824545863
+    },
+    {
+      "variant": "flat_radius",
+      "fold": 0,
+      "draws": 1536,
+      "distinct_training_images": 368,
+      "foreground_centered_draws": 768,
+      "mean_positive_fraction": 0.008691367007950597,
+      "empty_crop_fraction": 0.232421875,
+      "final_training_loss": 0.7586255595088005,
+      "final_train_foreground_probability": 0.4699963220375758,
+      "final_train_background_probability": 0.011364288639535088
+    },
+    {
+      "variant": "flat_radius",
+      "fold": 1,
+      "draws": 1536,
+      "distinct_training_images": 374,
+      "foreground_centered_draws": 768,
+      "mean_positive_fraction": 0.008694736160440628,
+      "empty_crop_fraction": 0.220703125,
+      "final_training_loss": 0.9050532827774683,
+      "final_train_foreground_probability": 0.3664871516997937,
+      "final_train_background_probability": 0.02107179459773405
+    },
+    {
+      "variant": "flat_radius",
+      "fold": 2,
+      "draws": 1536,
+      "distinct_training_images": 507,
+      "foreground_centered_draws": 768,
+      "mean_positive_fraction": 0.010388074226831601,
+      "empty_crop_fraction": 0.17838541666666666,
+      "final_training_loss": 0.7051735371351242,
+      "final_train_foreground_probability": 0.5010640436971535,
+      "final_train_background_probability": 0.008181896933414824
+    }
+  ],
+  "table": [
+    {
+      "candidate": "raw_radius_cc",
+      "pq": 0.11996884336993575,
+      "tp": 1519,
+      "fp": 6369,
+      "fn": 6405,
+      "sum_iou": 948.473675682712,
+      "observations": 658,
+      "annotator_image_records": 1079,
+      "fold0_pq": 0.14448615144890775,
+      "fold1_pq": 0.10423497491158984,
+      "fold2_pq": 0.08027868251323492,
+      "training_seconds": 650.9888288779998,
+      "inference_seconds_both_instance_modes": 791.166181462,
+      "peak_cuda_gib": 2.0836544036865234,
+      "delta_vs_v3_development": -0.05707838181495549
+    },
+    {
+      "candidate": "raw_radius_group",
+      "pq": 0.1277349476978116,
+      "tp": 1614,
+      "fp": 6216,
+      "fn": 6310,
+      "sum_iou": 1006.1681830156621,
+      "observations": 658,
+      "annotator_image_records": 1079,
+      "fold0_pq": 0.15564889237263527,
+      "fold1_pq": 0.10804083884226015,
+      "fold2_pq": 0.08668706038731339,
+      "training_seconds": 650.9888288779998,
+      "inference_seconds_both_instance_modes": 791.166181462,
+      "peak_cuda_gib": 2.0836544036865234,
+      "delta_vs_v3_development": -0.04931227748707964
+    },
+    {
+      "candidate": "flat_radius_cc",
+      "pq": 0.12751905166411526,
+      "tp": 2042,
+      "fp": 10518,
+      "fn": 5882,
+      "sum_iou": 1306.0501271438684,
+      "observations": 658,
+      "annotator_image_records": 1079,
+      "fold0_pq": 0.12983475738104847,
+      "fold1_pq": 0.13295275011662352,
+      "fold2_pq": 0.0965480930250054,
+      "training_seconds": 638.8142907840001,
+      "inference_seconds_both_instance_modes": 992.4119131440002,
+      "peak_cuda_gib": 2.0836544036865234,
+      "delta_vs_v3_development": -0.04952817352077599
+    },
+    {
+      "candidate": "flat_radius_group",
+      "pq": 0.1396276602228051,
+      "tp": 2261,
+      "fp": 10382,
+      "fn": 5663,
+      "sum_iou": 1435.8610439012161,
+      "observations": 658,
+      "annotator_image_records": 1079,
+      "fold0_pq": 0.141781172904463,
+      "fold1_pq": 0.14462274891600913,
+      "fold2_pq": 0.10952227716977604,
+      "training_seconds": 638.8142907840001,
+      "inference_seconds_both_instance_modes": 992.4119131440002,
+      "peak_cuda_gib": 2.0836544036865234,
+      "delta_vs_v3_development": -0.03741956496208615
+    }
+  ],
+  "holdout_used": false,
+  "public_leaderboard_used_for_tuning": false,
+  "uncertainty": "single matched seed per fold; reused development groups; no independent holdout claim",
+  "validity_adjudication": {
+    "raw_recorded_decision_unchanged": true,
+    "validity": {
+      "raw_radius_cc": {
+        "status": "valid",
+        "reason": "raw input does not use radial intensity profile"
+      },
+      "raw_radius_group": {
+        "status": "valid",
+        "reason": "raw input; grouping tested without added foreground pixels"
+      },
+      "flat_radius_cc": {
+        "status": "invalid_photometry",
+        "reason": "Actual empty sampled radial annuli -> NaN median; uint8 cache cast discards invalid values, inference also carries NaN"
+      },
+      "flat_radius_group": {
+        "status": "invalid_photometry",
+        "reason": "Same corrupted photometry as flat_radius_cc; do not infer normalization benefit"
+      }
+    },
+    "best_valid_candidate": "raw_radius_group",
+    "best_valid_pq": 0.1277349476978116,
+    "baseline_pq": 0.17704722518489124,
+    "periods_improved": 0,
+    "continue_gpu": false,
+    "reason": "Valid candidate misses frozen continuation gate; normalization comparison is invalid. Stop GPU after six fixed fits. Repair estimator on a real-image CPU regression before any future separately-defined plan.",
+    "source": "results/kaggle_v4/project/execution.log warnings; canonical counts reused, no rescoring",
+    "holdout_used": false,
+    "public_score_used_to_tune": false
+  }
+}

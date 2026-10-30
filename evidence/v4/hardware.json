@@ -1,0 +1,13 @@
+{
+  "name": "Tesla T4",
+  "capability": [
+    7,
+    5
+  ],
+  "vram_bytes": 15636037632,
+  "cuda_available": true,
+  "torch_threads": 4,
+  "requested_machine_shape": "Gpu",
+  "kernel": "mengxinlab/solar-filament-v4-native-20261030",
+  "session_timeout_seconds": 7200
+}

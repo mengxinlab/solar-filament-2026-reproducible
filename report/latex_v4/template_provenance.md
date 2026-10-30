@@ -1,25 +1,11 @@
 # Template provenance and build state
 
-The official organizer's read-only template link is
-https://www.overleaf.com/read/vjztpvrnbrdh#43fbbe . A read-only HTTP request returned
-the generic Overleaf editor page rather than project files, so no authentication,
-Overleaf synchronization or edit was attempted.
+The organizer's read-only template link is https://www.overleaf.com/read/vjztpvrnbrdh#43fbbe . Its read-only HTTP response exposed the generic editor rather than source files; no login or Overleaf edit was attempted.
 
-As the parent requested, the inspected MIT repository's report structure provides
-the fallback template evidence: `ameyypawar/filament-seg`, commit
-`81a739bb7786a44b989f5d76afbb6f9d22b5d1dd`,
-`reports/main.tex` and `reports/preamble.tex`. It uses
-`\documentclass[sigconf]{acmart}`, the competition subtitle, rights metadata with
-`\setcopyright{none}`, and `ACM-Reference-Format`. Only structural/preamble setup
-was adapted. No report prose, author information, figure, or validation score was
-copied into this report. MIT attribution is retained in the project source record.
+The MIT reference repository `ameyypawar/filament-seg`, commit `81a739bb7786a44b989f5d76afbb6f9d22b5d1dd`, provided the `acmart` `sigconf` report structure, subtitle, rights metadata and bibliography style. Only structural setup was adapted; all report prose and results are this project's. The retained MIT notice covers that source. Exact identity with the inaccessible official template cannot be established from this access attempt.
 
-The TeX project was created with `create_latex_project` and has **not yet been
-compiled or rendered**. Four deliberate page sections are separated by
-`\clearpage`, but exact four-page pagination is pending the first compile after
-the parent supplies actual V4 results. It is a draft with participant placeholders.
+Author: Xin Meng, China Medical University, China, mengxinlab@gmail.com, supplied directly by the participant.
 
-Sources: `main.tex`, `preamble.tex`, `main.bib`. V4 table rows and GPU judgment are
-marked pending and must be populated from canonical artifacts, not an assumed
-outcome. The first official score is 0.15, status COMPLETE, submission 57795106,
-as supplied from the canonical parent record. The v3 holdout is not reevaluated.
+The final report uses actual V3/V4 evidence, marks both flat controls INVALID, retains the original decision alongside its validity adjudication, and stops additional GPU spending. The PDF was compiled with MacTeX/TeX Live 2025 through the latex-compile skill. The PDF skill's first visual review found four legible pages with no clipped text, overlapping elements or broken tables. A final update adds two already archived descriptive failure cases; its required final render is recorded in `production_record.json`.
+
+The public repository and associated Kaggle notebook are published. The Google Form has not been filled or submitted; the live field schema remains behind Google sign-in.

@@ -1,0 +1,125 @@
+{
+  "global": {
+    "pq": 0.11996884336993575,
+    "tp": 1519,
+    "fp": 6369,
+    "fn": 6405,
+    "sum_iou": 948.473675682712,
+    "observations": 658,
+    "annotator_image_records": 1079
+  },
+  "per_fold": {
+    "0": {
+      "pq": 0.14448615144890775,
+      "tp": 850,
+      "fp": 2855,
+      "fn": 2881,
+      "sum_iou": 537.199511087039,
+      "observations": 279,
+      "annotator_image_records": 467
+    },
+    "1": {
+      "pq": 0.10423497491158984,
+      "tp": 533,
+      "fp": 2035,
+      "fn": 3166,
+      "sum_iou": 326.62029388546677,
+      "observations": 268,
+      "annotator_image_records": 428
+    },
+    "2": {
+      "pq": 0.08027868251323492,
+      "tp": 136,
+      "fp": 1479,
+      "fn": 358,
+      "sum_iou": 84.65387071020622,
+      "observations": 111,
+      "annotator_image_records": 184
+    }
+  },
+  "per_year": {
+    "2011": {
+      "pq": 0.15288874918427045,
+      "tp": 256,
+      "fp": 793,
+      "fn": 810,
+      "sum_iou": 161.679852262366,
+      "observations": 86,
+      "annotator_image_records": 150
+    },
+    "2012": {
+      "pq": 0.13696380464253888,
+      "tp": 289,
+      "fp": 1068,
+      "fn": 1008,
+      "sum_iou": 181.75096876064907,
+      "observations": 92,
+      "annotator_image_records": 161
+    },
+    "2013": {
+      "pq": 0.1453083540037675,
+      "tp": 305,
+      "fp": 994,
+      "fn": 1063,
+      "sum_iou": 193.76869006402393,
+      "observations": 101,
+      "annotator_image_records": 156
+    },
+    "2014": {
+      "pq": 0.1128224128461008,
+      "tp": 254,
+      "fp": 906,
+      "fn": 1353,
+      "sum_iou": 156.08980817258046,
+      "observations": 102,
+      "annotator_image_records": 161
+    },
+    "2015": {
+      "pq": 0.09781954068334381,
+      "tp": 167,
+      "fp": 673,
+      "fn": 1099,
+      "sum_iou": 103.00397633956104,
+      "observations": 86,
+      "annotator_image_records": 140
+    },
+    "2016": {
+      "pq": 0.09688164902916113,
+      "tp": 112,
+      "fp": 456,
+      "fn": 714,
+      "sum_iou": 67.52650937332531,
+      "observations": 80,
+      "annotator_image_records": 127
+    },
+    "2017": {
+      "pq": 0.07959426440542933,
+      "tp": 106,
+      "fp": 1145,
+      "fn": 279,
+      "sum_iou": 65.10810828364119,
+      "observations": 71,
+      "annotator_image_records": 118
+    },
+    "2018": {
+      "pq": 0.07498877871465129,
+      "tp": 18,
+      "fp": 225,
+      "fn": 48,
+      "sum_iou": 11.585766311413623,
+      "observations": 26,
+      "annotator_image_records": 42
+    },
+    "2019": {
+      "pq": 0.09707312335550507,
+      "tp": 12,
+      "fp": 109,
+      "fn": 31,
+      "sum_iou": 7.959996115151416,
+      "observations": 14,
+      "annotator_image_records": 24
+    }
+  },
+  "metric": "v3 score_frames counts pooled; strict IoU > 0.5 per annotator-image",
+  "numerical_note": "float64 COCO IoU; official float32 overlap can differ at threshold rounding"
+}

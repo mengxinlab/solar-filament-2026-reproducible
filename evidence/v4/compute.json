@@ -1,0 +1,74 @@
+[
+  {
+    "variant": "raw_radius",
+    "fold": 0,
+    "train_images": 375,
+    "validation_images": 279,
+    "updates": 384,
+    "training_seconds": 217.86842986500005,
+    "inference_seconds": 347.597477723,
+    "peak_cuda_memory_bytes": 2237306880,
+    "inference_tiles_per_image": 25,
+    "tta": false
+  },
+  {
+    "variant": "raw_radius",
+    "fold": 1,
+    "train_images": 379,
+    "validation_images": 268,
+    "updates": 384,
+    "training_seconds": 212.51904849099992,
+    "inference_seconds": 302.90585658400005,
+    "peak_cuda_memory_bytes": 2237306880,
+    "inference_tiles_per_image": 25,
+    "tta": false
+  },
+  {
+    "variant": "raw_radius",
+    "fold": 2,
+    "train_images": 540,
+    "validation_images": 111,
+    "updates": 384,
+    "training_seconds": 220.60135052199985,
+    "inference_seconds": 140.662847155,
+    "peak_cuda_memory_bytes": 2237306880,
+    "inference_tiles_per_image": 25,
+    "tta": false
+  },
+  {
+    "variant": "flat_radius",
+    "fold": 0,
+    "train_images": 375,
+    "validation_images": 279,
+    "updates": 384,
+    "training_seconds": 210.61010943200017,
+    "inference_seconds": 400.2345223110001,
+    "peak_cuda_memory_bytes": 2237306880,
+    "inference_tiles_per_image": 25,
+    "tta": false
+  },
+  {
+    "variant": "flat_radius",
+    "fold": 1,
+    "train_images": 379,
+    "validation_images": 268,
+    "updates": 384,
+    "training_seconds": 210.17848681099986,
+    "inference_seconds": 434.5228985120002,
+    "peak_cuda_memory_bytes": 2237306880,
+    "inference_tiles_per_image": 25,
+    "tta": false
+  },
+  {
+    "variant": "flat_radius",
+    "fold": 2,
+    "train_images": 540,
+    "validation_images": 111,
+    "updates": 384,
+    "training_seconds": 218.02569454100012,
+    "inference_seconds": 157.6544923209999,
+    "peak_cuda_memory_bytes": 2237306880,
+    "inference_tiles_per_image": 25,
+    "tta": false
+  }
+]

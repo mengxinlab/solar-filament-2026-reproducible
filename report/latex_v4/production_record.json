@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Asia/Singapore",
+  "author": "Xin Meng",
+  "affiliation": "China Medical University",
+  "email": "mengxinlab@gmail.com",
+  "pdf": "report/solar_filament_technical_report.pdf",
+  "sha256": "ad7567642bdc9f97e9323033a3dfebf57f2c52558115263ecba1b2cd56cf709f",
+  "pages": 4,
+  "compiler": "MacTeX TeX Live 2025 / latexmk / pdflatex",
+  "compilation": "success; exitCode 0",
+  "template_provenance": "report/latex_v4/template_provenance.md",
+  "visual_review": {
+    "first_render": "all four pages contact sheet",
+    "final_update": "page 4 descriptive failure examples",
+    "final_render": "page 4 inspected; no clipping, overlap or broken tables"
+  },
+  "scientific_scope": "Frozen v3 preserved; flat V4 rows INVALID; best valid raw_group; STOP GPU",
+  "google_form": "not filled or submitted; live schema behind sign-in",
+  "review_family": "same-family provisional; no independent scientific review claimed"
+}

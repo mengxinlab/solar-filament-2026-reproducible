@@ -1,0 +1,30 @@
+{
+  "raw_recorded_decision_unchanged": true,
+  "validity": {
+    "raw_radius_cc": {
+      "status": "valid",
+      "reason": "raw input does not use radial intensity profile"
+    },
+    "raw_radius_group": {
+      "status": "valid",
+      "reason": "raw input; grouping tested without added foreground pixels"
+    },
+    "flat_radius_cc": {
+      "status": "invalid_photometry",
+      "reason": "Actual empty sampled radial annuli -> NaN median; uint8 cache cast discards invalid values, inference also carries NaN"
+    },
+    "flat_radius_group": {
+      "status": "invalid_photometry",
+      "reason": "Same corrupted photometry as flat_radius_cc; do not infer normalization benefit"
+    }
+  },
+  "best_valid_candidate": "raw_radius_group",
+  "best_valid_pq": 0.1277349476978116,
+  "baseline_pq": 0.17704722518489124,
+  "periods_improved": 0,
+  "continue_gpu": false,
+  "reason": "Valid candidate misses frozen continuation gate; normalization comparison is invalid. Stop GPU after six fixed fits. Repair estimator on a real-image CPU regression before any future separately-defined plan.",
+  "source": "results/kaggle_v4/project/execution.log warnings; canonical counts reused, no rescoring",
+  "holdout_used": false,
+  "public_score_used_to_tune": false
+}

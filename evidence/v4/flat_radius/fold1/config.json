@@ -1,0 +1,41 @@
+{
+  "id": "solar-v4-native-crop-diagnostic",
+  "seed": 20261031,
+  "device": "cuda",
+  "epochs": 8,
+  "steps_per_epoch": 48,
+  "batch_size": 4,
+  "lr": 0.001,
+  "base_channels": 16,
+  "num_workers": 0,
+  "crop_size": 512,
+  "positive_fraction": 0.5,
+  "positive_jitter": 128,
+  "inference_batch_size": 4,
+  "variants": [
+    "raw_radius",
+    "flat_radius"
+  ],
+  "folds": [
+    0,
+    1,
+    2
+  ],
+  "postprocessing": {
+    "threshold": 0.45,
+    "closing_radius": 1,
+    "min_area": 400,
+    "max_area": 100000,
+    "min_elongation": 1.0,
+    "seed_min_area": 16,
+    "group_radius": 6
+  },
+  "continue_gpu_if": {
+    "pooled_pq_min": 0.19704722518489123,
+    "periods_improved_min": 2,
+    "minimum_period_pq": 0.05,
+    "max_actual_gpu_session_hours": 2.0
+  },
+  "threshold_selection": "Fixed before V4. Do not use public score or frozen holdout labels.",
+  "variant": "flat_radius"
+}

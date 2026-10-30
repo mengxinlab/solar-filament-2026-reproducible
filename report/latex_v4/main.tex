@@ -11,10 +11,10 @@
 \email{mengxinlab@gmail.com}
 \renewcommand{\shortauthors}{Xin Meng}
 \begin{abstract}
-We study image-only instance segmentation of solar filaments in 2048$\times$2048 grayscale GONG H-alpha observations. A reproducible local-contrast baseline achieved development Panoptic Quality (PQ) 0.177047 and, after selection was frozen, PQ 0.105604 on 49 later observations. A compact whole-frame U-Net and a fixed neural--contrast mixture did not improve the development score. Diagnostics identify low neural responses, sparse positive pixels, and loss of filament scale under whole-frame downsampling, without evidence of input--target misalignment. We therefore prespecify a small native-resolution V4 comparison. Its results are pending in this draft. The first formal Kaggle submission was accepted with Public Score 0.15; this score verifies submission behavior and is excluded from parameter selection.
+We study image-only instance segmentation of solar filaments in 2048$\times$2048 grayscale GONG H-alpha observations. A reproducible local-contrast baseline achieved development Panoptic Quality (PQ) 0.177047 and, after selection was frozen, PQ 0.105604 on 49 later observations. A compact whole-frame U-Net and a fixed neural--contrast mixture did not improve the development score. Diagnostics identify low neural responses, sparse positive pixels, and loss of filament scale under whole-frame downsampling, without evidence of input--target misalignment. A prespecified native-resolution V4 comparison restored nonzero matches in all development periods but did not improve the reference. An empty-ring defect invalidated the normalization arm; it is retained as a failed experiment, not evidence about normalization efficacy. The first formal Kaggle submission was accepted with Public Score 0.15; this score verifies submission behavior and is excluded from parameter selection.
 \end{abstract}
 \maketitle
-\noindent\textbf{Draft status, 30 October 2026:} V4 result fields remain pending. Frozen v3 evidence is retained unchanged.
+\noindent\textbf{Evidence cutoff, 30 October 2026:} v3 is frozen; V4 raw comparisons are valid, normalization comparisons are invalid, and further GPU spending fails the prespecified gate.
 
 \section{Problem and Data}
 Solar filaments are dark, elongated structures with weak contrast, fine barbs, fragmented visible material, and nearby non-filament dark regions. The competition requires one mask per filament, making instance identity distinct from semantic foreground detection~\cite{competition}. We seek reproducible image-only inference and a validation protocol that exposes temporal failures.
@@ -61,7 +61,7 @@ Best pure U-Net & .018415 & 129 & 527 & 7795\\
 \end{table}
 
 \subsection{Results and Formal Submission}
-The reference's development-period PQ values are 0.174206, 0.177008, and 0.198192. The hybrid added 420 FP and lost 14 TP relative to the reference; its small increase in hit-IoU sum did not offset the larger denominator. The pure neural model's period PQ was 0, 0, and 0.137395. These results selected the contrast reference.
+The reference's period PQ values are 0.174206, 0.177008 and 0.198192. The hybrid added 420 FP and lost 14 TP; its small increase in hit-IoU sum did not offset the larger denominator. The pure neural model's period PQ was 0, 0 and 0.137395. These results selected the contrast reference.
 
 Its single later-block assessment yielded PQ \textbf{0.105604}, TP/FP/FN \textbf{49/261/226}. The absolute drop from development is 0.071443, or 40.4\%. A previously calculated calendar-month block-bootstrap interval is [0.075674, 0.127158], conditional on the selected model and observed holdout months. It is not hidden-test score uncertainty. Temporal generalization remains weak.
 
@@ -100,7 +100,7 @@ Native median widths of roughly eight to nine pixels become only two pixels afte
 The combined evidence motivates native-resolution supervision, explicit sampling, and intensity normalization. It does not separately identify each factor's causal effect. Declining training loss cannot establish overfitting because the histories contain no validation learning curves. Blindly increasing epochs is not the first proposed intervention.
 
 \section{Method Reference and Controlled V4 Design}
-We inspect \texttt{ameyypawar/filament-seg} at MIT commit \texttt{81a739bb7786a44b989f5d76afbb6f9d22b5d1dd}~\cite{pawar}. It uses native 512$^2$ crops, foreground-directed sampling, radial median-profile limb-darkening correction, corrected intensity plus radius channels, and an ImageNet-initialized ResNet34 U-Net~\cite{resnet}. Its detector fusion assigns unclaimed semantic foreground to confidence-filtered, dilated YOLO11-seg regions.
+We inspect the MIT repository \texttt{ameyypawar/filament-seg}, commit \texttt{81a739bb7786}~\cite{pawar}; the full hash is in the reference. It uses native 512$^2$ crops, foreground-directed sampling, radial median-profile limb-darkening correction, corrected intensity plus radius channels, and an ImageNet-initialized ResNet34 U-Net~\cite{resnet}. Its detector fusion assigns unclaimed semantic foreground to selected, dilated YOLO11-seg regions.
 
 Its 563/144 split randomly groups dates without our embargo; postprocessing cross-fitting does not make the complete research process a blind temporal evaluation. Its greedy one-to-one scorer and treatment of prediction-only images differ from the host notebook. We neither inherit that scorer as official PQ nor compare its validation score directly to our holdout.
 
@@ -111,36 +111,62 @@ Overlapping tile predictions are consolidated before instance extraction. No dup
 \clearpage
 \section{V4 Evidence and GPU Decision}
 \begin{table}[t]
-\caption{Prespecified V4 comparisons. Pending cells must be populated from canonical V4 artifacts before report release. No V4 result is claimed in this draft.}
+\caption{V4 development results. Flat rows ($^\ast$) are \textbf{INVALID}: recorded scores are retained solely as failure evidence.}
 \label{tab:v4}
 \centering
 \small
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{llrrrr}
 \toprule
-Input arm & Instances & PQ & TP & FP & FN\\
+Input & Instances & PQ & TP & FP & FN\\
 \midrule
-\texttt{raw\_radius} & \texttt{cc} & \pending & \pending & \pending & \pending\\
-\texttt{raw\_radius} & \texttt{group6} & \pending & \pending & \pending & \pending\\
-\texttt{flat\_radius} & \texttt{cc} & \pending & \pending & \pending & \pending\\
-\texttt{flat\_radius} & \texttt{group6} & \pending & \pending & \pending & \pending\\
+raw & cc & .119969 & 1519 & 6369 & 6405\\
+raw & group6 & .127735 & 1614 & 6216 & 6310\\
+flat$^\ast$ & cc & .127519 & 2042 & 10518 & 5882\\
+flat$^\ast$ & group6 & .139628 & 2261 & 10382 & 5663\\
 \bottomrule
 \end{tabular}
 \end{table}
-The ordinary-T4 V4 budget is at most two GPU hours. Further GPU investment requires the prespecified development gate: pooled PQ at least 0.197047225, improvement in at least two periods, and minimum period PQ greater than 0.05. This is a decision rule, not a V4 result. The gate must be evaluated on the complete predefined development set and cannot be relaxed after observing outcomes.
+\begin{table}[t]
+\caption{Period PQ under the unchanged date-grouped development protocol. Starred values remain invalid recorded outputs.}
+\label{tab:period}
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrr}
+\toprule
+Input & Instances & 2011--13 & 2014--16 & 2017--19\\
+\midrule
+raw & cc & .144486 & .104235 & .080279\\
+raw & group6 & .155649 & .108041 & .086687\\
+flat$^\ast$ & cc & .129835 & .132953 & .096548\\
+flat$^\ast$ & group6 & .141781 & .144623 & .109522\\
+\bottomrule
+\end{tabular}
+\end{table}
+The native-resolution raw model recovers valid matches in all periods, unlike the two zero-match v3 neural folds. It does not improve the classical reference. Grouping raises raw PQ from 0.119969 to 0.127735, with 95 additional TP and 153 fewer FP, but the best valid V4 result is 27.9\% below development PQ 0.177047. Each of its period scores also remains below the corresponding v3 reference score.
 
-Report PQ, TP, FP, FN, hit-IoU sum, all period scores, training and inference cost, peak memory, zero-detection images, and representative failures for every control. The three period scores for each row of Table~\ref{tab:v4}, arm-specific GPU time/peak memory, and inference time are \textbf{\pending}. If the gate fails, stop additional GPU spending and retain the accepted v3 reference unless a separately documented, evidence-based plan is approved. A Public Leaderboard increase alone does not satisfy the gate. Canonical V4 results and the investment judgment: \textbf{\pending}.
+\paragraph{Invalid normalization experiment.}
+The original radial-profile implementation resized a disk sample to 256$^2$ and divided it into 128 rings. Observation \texttt{20110918112834Ch} has no pixels in ring 127; its median becomes NaN. Cache conversion to uint8 writes zero at non-finite entries while floating-point inference retains NaNs, producing an invalid train/inference preprocessing contract. Thus both flat rows in Tables~\ref{tab:v4}--\ref{tab:period} are invalid, regardless of recorded PQ. They cannot establish whether limb-darkening correction helps or harms. Original outputs are preserved. The correction estimates all 128 ring medians from native 2048$^2$ disk pixels; a single real-case CPU regression found at least 137 pixels per ring and finite, positive profile values, without empty-bin filling. It passed in 0.0776 seconds. No GPU model was retrained after this fix; no repaired-arm score exists. Evidence is retained in \path{diagnostics/v4/p4_radial_failure.md} and its JSON companion.
+
+\paragraph{Compute and decision.}
+The run took 3,427.583 seconds (57.13 minutes) on T4, within the two-hour ceiling. Cache preparation took 339.101 seconds. Raw training took 650.989 seconds and inference 791.166 seconds; flat training took 638.814 seconds and inference 992.412 seconds. Peak allocated CUDA memory was 2.084 GiB per arm.
+
+The prespecified continuation gate requires development PQ at least 0.197047225, improvement in at least two periods, and minimum period PQ greater than 0.05. The best valid candidate fails the pooled-score and period-improvement requirements. The decision is therefore \textbf{STOP additional GPU spending and retain the accepted v3 model}. Invalid flat scores are excluded from candidate selection and gate adjudication. A repaired normalization comparison would require a new frozen plan rather than a silent retry, and the Public Leaderboard is not a tuning signal. Canonical V4 outputs remain separate under \path{results/kaggle_v4/project/runs/v4_native}.
+
+\paragraph{Illustrative raw-model failures.}
+Observation \texttt{20120703070814Th} has 0 TP, 24 FP and 43 FN: weak, long filaments are missed or fragmented. Observation \texttt{20171029150150Bh} has 0 TP, 51 FP and 15 FN, with many false regions along the solar limb. These counts pool all annotators; the archived overlays show one declared annotator. Cases were selected from existing error counts, with no further parameter tuning.
 
 \section{Reproducibility, Licensing and Limits}
-Versioned source, configuration hashes, source-image memberships, training histories, model checkpoints, predictions, PQ counts, environment freezes, and platform receipts are preserved. v3 canonical artifacts are under \texttt{results/kaggle\_v3/project/}; v4 must use a distinct directory. The notebook illustrates the entire pipeline and loads the selected model for inference without retraining. Fixed seeds do not imply bit-identical trajectories across MPS, CUDA, CPUs, or library versions.
+Versioned source, configurations, image memberships, histories, weights, predictions, PQ counts, environments, and receipts are preserved. v3 artifacts remain under \path{results/kaggle_v3/project/}; V4 is separate, including invalid outputs and adjudication. Fixed seeds do not imply bit-identical results across devices or library versions.
 
-The release repository is \url{https://github.com/mengxinlab/solar-filament-2026-reproducible}; its associated public Kaggle notebook is \url{https://www.kaggle.com/code/mengxinlab/solar-filament-2026-reproducible-release}. Final materials include pinned \texttt{requirements.txt}, a complete Jupyter notebook, selected model weights or classical parameters, and this four-page PDF. Raw competition data are not redistributed; they are acquired through Kaggle under their own CC BY-NC terms.
+The \href{https://github.com/mengxinlab/solar-filament-2026-reproducible}{public Git repository} and \href{https://www.kaggle.com/code/mengxinlab/solar-filament-2026-reproducible-release}{Kaggle notebook} supply pinned dependencies, complete pipeline code, selected classical parameters and inference without retraining. Raw competition data remain on Kaggle under their CC BY-NC terms.
 
-The classical reference and studied repository require MIT attribution and notices. Their MIT licenses do not relicense third-party dependencies or weights. Ultralytics has a separate AGPL-3.0 license; any detector implementation or weights require their own compliance and provenance review. We do not download the studied author's competition-trained weights, which could have used our held-out source images. V4's controlled study does not depend on external MAGFiLO labels. Ordinary Kaggle GPU is used; ARC-reserved RTX6000 is excluded.
+MIT notices and attribution accompany the reference code. They do not relicense dependencies or weights; Ultralytics is separately AGPL-3.0. We do not download the studied author's competition-trained weights, which could have used our holdout images. V4 uses no external MAGFiLO labels. Ordinary Kaggle GPU is used; ARC-reserved RTX6000 is excluded.
 
-Absolute PQ remains modest, with substantial FP/FN and a later-period decline. The diagnostic sample is limited, and the interventions' effects require the controlled V4 table. We do not claim reliable fine-barb reconstruction, future-cycle robustness, or independent model validation. Routine code review here is same-family and provisional.
+Absolute PQ remains modest. The raw bundle changes resolution and sampling jointly, without isolating their individual effects. Normalization efficacy remains untested. We do not claim fine-barb accuracy, future-cycle robustness, or independent validation; routine review is same-family and provisional.
 
-The release checklist is \texttt{report/google\_form\_checklist.md}. Finalization requires canonical V4 values, a four-page rendered PDF, publicly accessible code and required weights, and completion of the organizer's actual form fields. No form is submitted by this draft.
+The separate release checklist records final form fields and artifact hashes. No Google Form is submitted by this report.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{main}

@@ -1,0 +1,61 @@
+{
+  "source_zip_sha256": "70a0879aa9047e7de2771d8dbbeb76a8df09fff4ddf4cd4d524a2b1f161725df",
+  "files": [
+    {
+      "path": "src/solarseg/__init__.py",
+      "sha256": "990fa6a10397adefa5c932d77e702bd140bbf75f910ad9f10f3341e70839797b"
+    },
+    {
+      "path": "src/solarseg/classical.py",
+      "sha256": "f1614de88d5041b1665ea207e05301c026dfd49decd9a66e381e75cb7a614606"
+    },
+    {
+      "path": "src/solarseg/cli.py",
+      "sha256": "9b2ac64ab3c55beaead59af0340eebd27744a5ab24402fabc17b7c9ca2ea1d6e"
+    },
+    {
+      "path": "src/solarseg/metrics.py",
+      "sha256": "d6d8738cf5091d7e965cac8f5a5d9c7a6610213a78429fc1ec8c1f6c0fe5a2df"
+    },
+    {
+      "path": "src/solarseg/neural.py",
+      "sha256": "bb49891cd843c215bdb042296bb0d9c7599a11c21969e47ff95a12f166f414e3"
+    },
+    {
+      "path": "src/solarseg/pipeline.py",
+      "sha256": "78514d53f79d63ae9be54d48d1e96be59cf5330cef10704c9cc236b60f43c2e8"
+    },
+    {
+      "path": "src/solarseg/prepare.py",
+      "sha256": "9266caf602edacd55f379b40c573d347baeaa5aaa0a39ad95794546f1f23183b"
+    },
+    {
+      "path": "src/solarseg/rle.py",
+      "sha256": "95f4c27dc2a56b00404cb24c8a844c1aea66ce92e02ab032dce57bf3bc7779ff"
+    },
+    {
+      "path": "src/solarseg/v4_instances.py",
+      "sha256": "72bcc373552449ea34995e6307997703d8a5bb396e6c0c426ce45db131f24992"
+    },
+    {
+      "path": "src/solarseg/v4_model.py",
+      "sha256": "027b171ac56d445f9112793bc8a71765641663170d7aed6c8b3256175e85d9e6"
+    },
+    {
+      "path": "src/solarseg/v4_runner.py",
+      "sha256": "777dae6f8b909063db0b803e633a86a6f32826b5ab7036263d9280cc2e769849"
+    },
+    {
+      "path": "configs/v4_experiments.json",
+      "sha256": "5ebb0b32499b86a4e69f5c641a2d715b2380e2d5465e4b6cc00967521b18fce5"
+    },
+    {
+      "path": "configs/v4_splits.json",
+      "sha256": "b78d8c0478e6f503b4cff7d7cfe4431ef83e6983c12dff1b3adb2d2060188cfb"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "0a20eb95cc2a0bc61053bc0c7bc6fe22fbfa549c390c038e2dc5594936546548"
+    }
+  ]
+}

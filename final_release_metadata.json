@@ -1,0 +1,488 @@
+{
+  "release_target": "mengxinlab/solar-filament-2026-reproducible",
+  "prepared_date": "2026-10-30",
+  "author": {
+    "name": "Xin Meng",
+    "affiliation": "China Medical University",
+    "email": "mengxinlab@gmail.com"
+  },
+  "publication_action": "final commit and public push by parent executor",
+  "initial_stage_evidence": {
+    "file": "release_manifest.json",
+    "sha256": "d63d70495f6633c82406c10addc590c0a4bc8ed3d571a45decfd8f64bf819197",
+    "preserved_without_modification": true
+  },
+  "official_submission": {
+    "id": 57795106,
+    "status": "COMPLETE",
+    "public_score": 0.15,
+    "purpose": "formal submission legality only; no leaderboard-driven tuning"
+  },
+  "v3_frozen_results_preserved": true,
+  "holdout": {
+    "images": 49,
+    "role": "one frozen V3 temporal evaluation; no V4 label development"
+  },
+  "v4": {
+    "best_valid": "raw_radius_group",
+    "best_valid_development_pq": 0.127734948,
+    "frozen_classical_development_pq": 0.177047225,
+    "invalid_controls": [
+      "flat_radius_cc",
+      "flat_radius_group"
+    ],
+    "invalid_reason": "empty annulus in downsampled radial median preprocessing",
+    "new_repair": "src/solarseg/v4_photometry.py",
+    "repair_validation": "one CPU real-case regression only; no GPU result",
+    "historical_v4_model_preserved": true,
+    "gpu_decision": "STOP"
+  },
+  "technical_report": {
+    "file": "report/solar_filament_technical_report.pdf",
+    "status": "compiled and visually reviewed",
+    "pages": 4,
+    "sha256": "ad7567642bdc9f97e9323033a3dfebf57f2c52558115263ecba1b2cd56cf709f",
+    "production_record": "report/latex_v4/production_record.json"
+  },
+  "updated_files": [
+    {
+      "path": ".gitignore",
+      "operation": "final report and production metadata",
+      "bytes": 425,
+      "sha256": "c18e69e2cc13f3e001383a731b3abab24359b61d8f2884ccd8cc78315631e5cd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11364,
+      "sha256": "4239e19fd07bd614f4805d931a5072468011e27e4573342cdc46d4e1b4f15076",
+      "operation": "final evidence, validity, stop-GPU, authorship and pending-PDF documentation"
+    },
+    {
+      "path": "diagnostics/v4/p4_radial_failure.json",
+      "bytes": 8260,
+      "sha256": "20267361b53dd2f63d362888cb9cc494a7c6ad7b00abc968a651783675d290b3",
+      "operation": "verbatim_evidence_or_new_reference_module_copy"
+    },
+    {
+      "path": "diagnostics/v4/p4_radial_failure.md",
+      "bytes": 2779,
+      "sha256": "7010c65754da93a0efdb4ccee7d5a651f7e87af82796abfae3daf267323ed761",
+      "operation": "verbatim_evidence_or_new_reference_module_copy"
+    },
+    {
+      "path": "docs/v4_comparison.csv",
+      "bytes": 1070,
+      "sha256": "5fc0103f008b46c30dd7e6cd5ae78bce6eb0c98a2f51958fb101da01b0296d8b",
+      "operation": "verbatim_evidence_or_new_reference_module_copy"
+    },
+    {
+      "path": "docs/v4_evidence.json",
+      "bytes": 13153,
+      "sha256": "61f7168309c15d75b92837a86b2dee2ec4f34dcf32bead0a8568c1a9e0bb9672",
+      "operation": "verbatim_evidence_or_new_reference_module_copy"
+    },
+    {
+      "path": "docs/v4_per_year.csv",
+      "bytes": 2907,
+      "sha256": "f025f0b80128add0f8d277143b0480fd7726ab93e6e17abddd99f419fee5055e",
+      "operation": "verbatim_evidence_or_new_reference_module_copy"
+    },
+    {
+      "path": "docs/v4_results.md",
+      "bytes": 3946,
+      "sha256": "83e0e3cfa23b3bfd355b863d4913a1ed6dfae77da0ecccd4b898b08676ca6d13",
+      "operation": "canonical results plus public-archive location note"
+    },
+    {
+      "path": "docs/v4_training_exposure.csv",
+      "bytes": 928,
+      "sha256": "bf1456af63c09228871ac8fc9234a2e8550714e61a2c85e5d169447f0c7f5fd2",
+      "operation": "verbatim_evidence_or_new_reference_module_copy"
+    },
+    {
+      "path": "docs/v4_training_history.csv",
+      "bytes": 7406,
+      "sha256": "525f9632fd077931a7812c9982c5a68df75dd5d39ff89a03813a62143ce9bdbf",
+      "operation": "verbatim_evidence_or_new_reference_module_copy"
+    },
+    {
+      "path": "report/google_form_checklist.md",
+      "operation": "final report and production metadata",
+      "bytes": 4899,
+      "sha256": "1bb07636a2421b0db4dea542346669e7ddd2d0840801f317ac2b103ecb3f7665"
+    },
+    {
+      "path": "report/latex_v4/LICENSE-template.txt",
+      "operation": "final report and production metadata",
+      "bytes": 1067,
+      "sha256": "84e62379b473ba5bca7146fb586e28b0a2174ad1d141a92eba85087033c0d9b6"
+    },
+    {
+      "path": "report/latex_v4/main.bib",
+      "operation": "final report and production metadata",
+      "bytes": 1702,
+      "sha256": "cbf3d530ad352275f90503bc7324022f3dbfea72640096f0545178b2ac23e7ab"
+    },
+    {
+      "path": "report/latex_v4/main.tex",
+      "operation": "final report and production metadata",
+      "bytes": 18747,
+      "sha256": "eebc62b64a32fc0d9e0bf76290f8e8b34fcb34bf83090d43031c4906341b25c7"
+    },
+    {
+      "path": "report/latex_v4/preamble.tex",
+      "operation": "final report and production metadata",
+      "bytes": 629,
+      "sha256": "10127ddcf5b9658e3cbd0c08d4e5139af59be428dab3a792d21c671b3b2d33a7"
+    },
+    {
+      "path": "report/latex_v4/production_record.json",
+      "operation": "final report and production metadata",
+      "bytes": 952,
+      "sha256": "b60f3b505d992e09f178087c512199e02828e8013e24ac99f614a3e340f20bd7"
+    },
+    {
+      "path": "report/latex_v4/template_provenance.md",
+      "operation": "final report and production metadata",
+      "bytes": 1498,
+      "sha256": "54b58ab493e2ff2c45bbd2ccb3fdf5b46598d522e557f3d1eb25a98935522e70"
+    },
+    {
+      "path": "report/solar_filament_technical_report.pdf",
+      "operation": "final report and production metadata",
+      "bytes": 434339,
+      "sha256": "ad7567642bdc9f97e9323033a3dfebf57f2c52558115263ecba1b2cd56cf709f"
+    },
+    {
+      "path": "report/v4_technical_report_draft.md",
+      "operation": "final report and production metadata",
+      "bytes": 20240,
+      "sha256": "6fd32424b762420416a1c073983dad7a1af68da3fe2500c46d6cc91d07e52b59"
+    },
+    {
+      "path": "src/solarseg/v4_photometry.py",
+      "bytes": 2029,
+      "sha256": "e1ca78c22c06af366e6a62fd9f2677ecc2d55483dd42deb708249e7275164046",
+      "operation": "verbatim_evidence_or_new_reference_module_copy"
+    },
+    {
+      "path": "tests/test_v4_photometry.py",
+      "bytes": 7472,
+      "sha256": "9624c645615056736d1e7bde6e31f488611437461b79c9b1d748e38cfda1259c",
+      "operation": "copied_with_pytest_tmp_path_outputs_only",
+      "reason": "Running an opt-in public regression must not overwrite the published historical failure evidence; estimator, bounded development search and assertions are unchanged."
+    }
+  ],
+  "work_performed": "Canonical evidence/model export and report publication. No extra GPU run, rescoring, repeated experiment checks or Google Form submission.",
+  "historical_v4_archive": {
+    "location": "evidence/v4",
+    "canonical_source": "results/kaggle_v4/project/runs/v4_native",
+    "model_checkpoint_count": 6,
+    "purpose": "historical traceability and reproduction; no V4 checkpoint is the selected release model",
+    "flat_arms_status": "INVALID preprocessing controls; do not select from the original raw decision",
+    "original_decision_preserved": true,
+    "validity_adjudication": "evidence/v4/validity_adjudication.json",
+    "actual_kaggle_runtime_freeze": "evidence/v4/requirements-runtime.txt",
+    "excluded": [
+      "*_oof.csv RLE predictions",
+      "failure JPG/PNG images",
+      "cache",
+      "raw competition images and labels"
+    ],
+    "new_computation": "none: no model execution, training, inference, scoring, diagnosis or GPU use",
+    "files": [
+      {
+        "path": "evidence/v4/cache_summary.json",
+        "bytes": 16155,
+        "sha256": "30efaa1965168899edfaa36f6c8af8fd4b575602c7ae5eea1ff2a0341770e761"
+      },
+      {
+        "path": "evidence/v4/compute.json",
+        "bytes": 1871,
+        "sha256": "f832acdc3b92ba83ba3a1d2f95799cfd32d2edfc1d2e89db9ce3efc84c463916"
+      },
+      {
+        "path": "evidence/v4/decision.json",
+        "bytes": 3996,
+        "sha256": "7ed6ca6db01636aedf5f24a316562af5a2f683cac07066ce251129982b5713bc"
+      },
+      {
+        "path": "evidence/v4/prespecified_config.json",
+        "bytes": 862,
+        "sha256": "6f0a6489dada4c12cc9ca24da35b85ad6ca92be51262e061890c64a0e125d098"
+      },
+      {
+        "path": "evidence/v4/provenance.json",
+        "bytes": 475,
+        "sha256": "27f0ef3b7415c0b1641343302d57442f24f139fbaefcb032da1b01aaa6dffd1a"
+      },
+      {
+        "path": "evidence/v4/results.json",
+        "bytes": 12570,
+        "sha256": "e42b393d1032900e4d5559d96ed5bdfc08f96c4f6b463145e2ef64ea6679ca33"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold0/model.pt",
+        "bytes": 1974843,
+        "sha256": "e65ed420e713188f65208593bb725015d031e1ed98110fe74f92252315462d67"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold0/config.json",
+        "bytes": 889,
+        "sha256": "fa3daeee2ca2e9fe168e233006fdb2e44bcdba8aba359ec9c6887bbc7df33987"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold0/history.json",
+        "bytes": 2487,
+        "sha256": "d16850be50ece9cbfa8a32dbeb48cf848547a436c50e8a1c6d20c05954656606"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold0/train_ids.json",
+        "bytes": 8253,
+        "sha256": "1c2a055f55c981a51745c00ffa1fab07addb9308dcb92038931b6c98b1e0bb8b"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold0/sample_draws.csv",
+        "bytes": 131307,
+        "sha256": "a9bf97d86beaf485d369ace5d240e089afa269281fbad73ebbb3d6c441ae8e70"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold1/model.pt",
+        "bytes": 1974971,
+        "sha256": "79ed3775c51e4ff9cbda9e8d2af033b5cdd6884849f454e707b0aa327b197ca6"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold1/config.json",
+        "bytes": 889,
+        "sha256": "b594c7f74255734394c2e09bee286142e135075a0474b75efbc6303227b48562"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold1/history.json",
+        "bytes": 2503,
+        "sha256": "c54c9c22f8c13ff083ce4e5f19a55e15baba4395ff0efd1e4e5f72d2fc5cb62e"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold1/train_ids.json",
+        "bytes": 8341,
+        "sha256": "9d62e2c891713f85200ceb507d82749cb449524f0de0d2987ec7ef324a25da3f"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold1/sample_draws.csv",
+        "bytes": 131575,
+        "sha256": "358842374b83f45ec73d021366a41f2ed0eec5ecb9ce877b31bc29ac9d68bd6e"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold2/model.pt",
+        "bytes": 1979131,
+        "sha256": "ced617eef82017173486b95fa906306eea5a4867f5039b964384f2d14f0a2c8e"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold2/config.json",
+        "bytes": 889,
+        "sha256": "483014a7d1884a4d2bcfb8e13c5426a64e3c66a1116615241eab147eea5da8b9"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold2/history.json",
+        "bytes": 2507,
+        "sha256": "63e82d4d38e385d193d5554771aeb6997861e81fbebacc5931e1582dcad7fb36"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold2/train_ids.json",
+        "bytes": 11883,
+        "sha256": "1bd892cbfc5d14244d55ad34b7b1db05c3f8f151fbae07d500d10a92aeaf1979"
+      },
+      {
+        "path": "evidence/v4/raw_radius/fold2/sample_draws.csv",
+        "bytes": 132707,
+        "sha256": "28062009095d6f623278d0b1b737cdf3c31589a1e047735f7e02d31c2c20dda8"
+      },
+      {
+        "path": "evidence/v4/raw_radius/cc_per_image.csv",
+        "bytes": 64530,
+        "sha256": "53f2d54c216707af3a30bc3cdfcd5487072da7cb58ec00a50aaaf4effb35295d"
+      },
+      {
+        "path": "evidence/v4/raw_radius/cc_scores.json",
+        "bytes": 2868,
+        "sha256": "8347f04e2671314a891846938956e0e79bfba5e62d0000a34cf35c4df4c55b71"
+      },
+      {
+        "path": "evidence/v4/raw_radius/group_per_image.csv",
+        "bytes": 65113,
+        "sha256": "b56b4c2079ec8d488826e92cf79c74f3450b98a16945de2baaa354996f864a36"
+      },
+      {
+        "path": "evidence/v4/raw_radius/group_scores.json",
+        "bytes": 2870,
+        "sha256": "2c2e6016a8ff685678c59b4adfe96e2b38d331ea553a918344ac180a8bc34094"
+      },
+      {
+        "path": "evidence/v4/raw_radius/probability_summary.csv",
+        "bytes": 52684,
+        "sha256": "410ae6739d64e3db87e72f5a2cc3da7b60f7407191fac942496011ab67aa478d"
+      },
+      {
+        "path": "evidence/v4/raw_radius/cc_failures/cases.json",
+        "bytes": 5264,
+        "sha256": "d557dad2a7ccc275c43880fb7ca834ee29c4cd1e24d1cb7f28b59e016793ff6a"
+      },
+      {
+        "path": "evidence/v4/raw_radius/group_failures/cases.json",
+        "bytes": 5264,
+        "sha256": "702d6670a807830ea8b8ebb25a858d46840f46dac912bcdf70369f3dc17df802"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold0/model.pt",
+        "bytes": 1974843,
+        "sha256": "ca5dedf92874e8b9fb8057bf6412108b021917b3626c6f9af3debebb2011ab13"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold0/config.json",
+        "bytes": 890,
+        "sha256": "bd1e1c7b1df57a217ed94bf61d82e17c33049dd369417cdb41ba8cff6a06941e"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold0/history.json",
+        "bytes": 2502,
+        "sha256": "e9e622de5129db8cae281e9c76730f236e5ba6f6f242678306f4873d455d0beb"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold0/train_ids.json",
+        "bytes": 8253,
+        "sha256": "1c2a055f55c981a51745c00ffa1fab07addb9308dcb92038931b6c98b1e0bb8b"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold0/sample_draws.csv",
+        "bytes": 131307,
+        "sha256": "a9bf97d86beaf485d369ace5d240e089afa269281fbad73ebbb3d6c441ae8e70"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold1/model.pt",
+        "bytes": 1974971,
+        "sha256": "19df5dae533da2b7bdc26f4b46c75a884d8fc20ab7350b60f1e5a6b5945c423a"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold1/config.json",
+        "bytes": 890,
+        "sha256": "11dddc92c3bc4e544c3b886d0b4812a87ac48459f4ecbc7cc4d501477ed78577"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold1/history.json",
+        "bytes": 2506,
+        "sha256": "4b8061c7ec657718e2fcc502a2cfa49b02bd1275b66f6e3c7ad0e5f4731c49df"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold1/train_ids.json",
+        "bytes": 8341,
+        "sha256": "9d62e2c891713f85200ceb507d82749cb449524f0de0d2987ec7ef324a25da3f"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold1/sample_draws.csv",
+        "bytes": 131575,
+        "sha256": "358842374b83f45ec73d021366a41f2ed0eec5ecb9ce877b31bc29ac9d68bd6e"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold2/model.pt",
+        "bytes": 1979131,
+        "sha256": "4340216d3ccbcecc36c9e7eb48603cdf18694d35cd39da340e0962a13fd981ae"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold2/config.json",
+        "bytes": 890,
+        "sha256": "d464bacddc2027d9951a6878848e213539e2d8526797503b51cbdd168ea4dde5"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold2/history.json",
+        "bytes": 2508,
+        "sha256": "29356953a04e8cf737180b2206bf99b49d9bc916b58cc934930cba9d45397452"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold2/train_ids.json",
+        "bytes": 11883,
+        "sha256": "1bd892cbfc5d14244d55ad34b7b1db05c3f8f151fbae07d500d10a92aeaf1979"
+      },
+      {
+        "path": "evidence/v4/flat_radius/fold2/sample_draws.csv",
+        "bytes": 132707,
+        "sha256": "28062009095d6f623278d0b1b737cdf3c31589a1e047735f7e02d31c2c20dda8"
+      },
+      {
+        "path": "evidence/v4/flat_radius/cc_per_image.csv",
+        "bytes": 68322,
+        "sha256": "5263e8a46229074d9f6b6ec38e33a877e6a4b281eb472f6e17987a94087e64c2"
+      },
+      {
+        "path": "evidence/v4/flat_radius/cc_scores.json",
+        "bytes": 2875,
+        "sha256": "2404b415d8eada6052ac55518a8136636d192d40c465e17ee62679f951b118d0"
+      },
+      {
+        "path": "evidence/v4/flat_radius/group_per_image.csv",
+        "bytes": 69179,
+        "sha256": "0331fe8d5a04cf80909987a1680a1d45e9709caf051e1038f27ec887fd62e655"
+      },
+      {
+        "path": "evidence/v4/flat_radius/group_scores.json",
+        "bytes": 2874,
+        "sha256": "bf91edcc4441153585cdce877befcfb9a3ffbe1486e1ca7257eedbfb397a2da3"
+      },
+      {
+        "path": "evidence/v4/flat_radius/probability_summary.csv",
+        "bytes": 52316,
+        "sha256": "81f5ba9f10b274e96a5497f4617e42a3701179674012b34e2198980ea115b003"
+      },
+      {
+        "path": "evidence/v4/flat_radius/cc_failures/cases.json",
+        "bytes": 5329,
+        "sha256": "ae939f1cda79ff120ad0da5195ec7a4a25d41c412b190f517ad7eba5bc90cc1b"
+      },
+      {
+        "path": "evidence/v4/flat_radius/group_failures/cases.json",
+        "bytes": 4945,
+        "sha256": "c4ec3a14e599e0d6d2302c2327365446ff08731900396b58845465ed2d281f27"
+      },
+      {
+        "path": "evidence/v4/validity_adjudication.json",
+        "bytes": 1260,
+        "sha256": "174ae2256ed64622a9b3ff0957fc12d024d48802fb92b04e64c8ba56cfa83173"
+      },
+      {
+        "path": "evidence/v4/requirements-runtime.txt",
+        "bytes": 18254,
+        "sha256": "7a9349f9acd6fb853df853c895d376500f52a869a5a3521dd4faf1b121d4a888"
+      },
+      {
+        "path": "evidence/v4/runtime.json",
+        "bytes": 236,
+        "sha256": "f96f2b094b40d64928ee8e43ab139170db1709a24373f205a8c061cedf8bd9a0"
+      },
+      {
+        "path": "evidence/v4/hardware.json",
+        "bytes": 269,
+        "sha256": "68c10dcec98da3cba8abb05467cc03e300ba36cb346945b5b2913ad1d5af5ead"
+      },
+      {
+        "path": "evidence/v4/source-manifest.json",
+        "bytes": 2028,
+        "sha256": "09d00d01a7b31efb70fc76a12c0a3835d56896c1c463e6113607162edb6fe92c"
+      },
+      {
+        "path": "evidence/v4/execution.log",
+        "bytes": 26067,
+        "sha256": "dda067b87f48a77a16290bc66839ae0faddbf8fde8aeb15e21ab6acf3d3e672c"
+      },
+      {
+        "path": "evidence/v4/README.md",
+        "bytes": 1856,
+        "sha256": "20f2bf2184f1deebb246ee2549b339551ea3cce6f1cf7eafda6808c0dbbf5349"
+      }
+    ]
+  },
+  "historical_archive_documentation": {
+    "readme_sha256": "b394551fe3ee766879be5e412871d0b64aee5806ad04af84ad1934c3d6a77a66",
+    "gitignore_exceptions_added": true,
+    "commit_or_push_performed": false
+  },
+  "git_reference": "refs/tags/v4-diagnostic-20261030",
+  "google_form": "prepared checklist; not filled or submitted; live fields behind sign-in"
+}

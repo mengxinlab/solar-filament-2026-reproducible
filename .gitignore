@@ -10,3 +10,14 @@ __pycache__/
 
 !evidence/
 !evidence/**
+
+# Explicit historical model/numerical evidence is part of the public release.
+!evidence/
+!evidence/v4/
+!evidence/v4/**
+# Raw predictions/images/cache are deliberately excluded from this archive.
+evidence/v4/**/*_oof.csv
+evidence/v4/**/*.jpg
+evidence/v4/**/*.jpeg
+evidence/v4/**/*.png
+evidence/v4/**/cache/

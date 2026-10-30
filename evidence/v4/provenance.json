@@ -1,0 +1,9 @@
+{
+  "source_sha256": "faa412efef17aa93baed7bf998d977555dcf1732a9d958f174f420a7b476d26b",
+  "config_sha256": "5ebb0b32499b86a4e69f5c641a2d715b2380e2d5465e4b6cc00967521b18fce5",
+  "split_sha256": "b78d8c0478e6f503b4cff7d7cfe4431ef83e6983c12dff1b3adb2d2060188cfb",
+  "reference_artifact": "/kaggle/input/notebooks/mengxinlab/solar-filament-2026-offline-20261030/project",
+  "holdout_labels_used": false,
+  "test_images_used": false,
+  "public_score_used_for_selection": false
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "epoch": 1,
+    "loss": 1.2403715923428535,
+    "bce": 0.2614375362172723,
+    "soft_dice_loss": 0.9789340570569038,
+    "positive_fraction": 0.0112863673469595,
+    "foreground_probability": 0.22922633116406557,
+    "background_probability": 0.21544278016820329,
+    "seconds": 24.892983879999974
+  },
+  {
+    "epoch": 2,
+    "loss": 1.1256231119235356,
+    "bce": 0.15166685124859214,
+    "soft_dice_loss": 0.9739562720060349,
+    "positive_fraction": 0.009443473177573955,
+    "foreground_probability": 0.19924179739973463,
+    "background_probability": 0.12691321743420414,
+    "seconds": 24.739419448000262
+  },
+  {
+    "epoch": 3,
+    "loss": 1.0303340181708336,
+    "bce": 0.10560586924354236,
+    "soft_dice_loss": 0.9247281439602375,
+    "positive_fraction": 0.01026063928535829,
+    "foreground_probability": 0.41523159727988757,
+    "background_probability": 0.08394840107315711,
+    "seconds": 24.16426390000015
+  },
+  {
+    "epoch": 4,
+    "loss": 0.9398656189441681,
+    "bce": 0.07305857841856778,
+    "soft_dice_loss": 0.8668070373435816,
+    "positive_fraction": 0.010289934939161563,
+    "foreground_probability": 0.4954692334601827,
+    "background_probability": 0.050740148478869054,
+    "seconds": 24.315939207000156
+  },
+  {
+    "epoch": 5,
+    "loss": 0.8420771037538847,
+    "bce": 0.054434417242494725,
+    "soft_dice_loss": 0.7876426863173643,
+    "positive_fraction": 0.011317616740901334,
+    "foreground_probability": 0.5361523624192689,
+    "background_probability": 0.02911169678611487,
+    "seconds": 24.603709309999886
+  },
+  {
+    "epoch": 6,
+    "loss": 0.7857904943327109,
+    "bce": 0.04581454241027435,
+    "soft_dice_loss": 0.7399759516119957,
+    "positive_fraction": 0.01082567754686655,
+    "foreground_probability": 0.5314896766488513,
+    "background_probability": 0.017865955001462725,
+    "seconds": 24.39700519400003
+  },
+  {
+    "epoch": 7,
+    "loss": 0.7388181388378143,
+    "bce": 0.04470091041487952,
+    "soft_dice_loss": 0.6941172232230505,
+    "positive_fraction": 0.010734496327737967,
+    "foreground_probability": 0.5389574664374116,
+    "background_probability": 0.012664075108432085,
+    "seconds": 24.33220681900002
+  },
+  {
+    "epoch": 8,
+    "loss": 0.7051735371351242,
+    "bce": 0.039246421811791755,
+    "soft_dice_loss": 0.6659271183113257,
+    "positive_fraction": 0.008946388950183367,
+    "foreground_probability": 0.5010640436971535,
+    "background_probability": 0.008181896933414824,
+    "seconds": 24.381237323000278
+  }
+]

@@ -1,0 +1,139 @@
+{"cache_images": 25, "total": 658, "seconds": 12.899337958999979}
+{"cache_images": 50, "total": 658, "seconds": 25.469546278999985}
+/usr/local/lib/python3.13/dist-packages/numpy/_core/fromnumeric.py:3904: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/usr/local/lib/python3.13/dist-packages/numpy/_core/_methods.py:147: RuntimeWarning: invalid value encountered in divide
+  ret = ret.dtype.type(ret / rcount)
+/kaggle/working/project/src/solarseg/v4_model.py:111: RuntimeWarning: invalid value encountered in cast
+  cv2.imwrite(str(cache_dir / "flat" / f"{image_id}.png"), np.rint(flattened * 255).astype(np.uint8), [cv2.IMWRITE_PNG_COMPRESSION, 1])
+{"cache_images": 75, "total": 658, "seconds": 38.51242510399999}
+{"cache_images": 100, "total": 658, "seconds": 51.531058101999974}
+{"cache_images": 125, "total": 658, "seconds": 64.29345527499999}
+{"cache_images": 150, "total": 658, "seconds": 77.35432151499998}
+{"cache_images": 175, "total": 658, "seconds": 90.281058701}
+{"cache_images": 200, "total": 658, "seconds": 103.16724936600002}
+{"cache_images": 225, "total": 658, "seconds": 115.85911074900002}
+{"cache_images": 250, "total": 658, "seconds": 128.62395080099998}
+{"cache_images": 275, "total": 658, "seconds": 141.38822284999998}
+{"cache_images": 300, "total": 658, "seconds": 154.30120847899997}
+{"cache_images": 325, "total": 658, "seconds": 167.16634689699998}
+{"cache_images": 350, "total": 658, "seconds": 179.881597269}
+{"cache_images": 375, "total": 658, "seconds": 192.762712852}
+{"cache_images": 400, "total": 658, "seconds": 205.60082114899996}
+{"cache_images": 425, "total": 658, "seconds": 218.64865327900003}
+{"cache_images": 450, "total": 658, "seconds": 231.651402519}
+{"cache_images": 475, "total": 658, "seconds": 244.38938143499996}
+{"cache_images": 500, "total": 658, "seconds": 257.52166529100003}
+{"cache_images": 525, "total": 658, "seconds": 270.293030818}
+{"cache_images": 550, "total": 658, "seconds": 283.09568192600005}
+{"cache_images": 575, "total": 658, "seconds": 296.16458453499996}
+{"cache_images": 600, "total": 658, "seconds": 309.122004095}
+{"cache_images": 625, "total": 658, "seconds": 322.22125572500005}
+{"cache_images": 650, "total": 658, "seconds": 334.914337825}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold0", "epoch": 1, "loss": 1.3073470244805019, "bce": 0.3229366624727845, "soft_dice_loss": 0.9844103679060936, "positive_fraction": 0.008162997677573003, "foreground_probability": 0.2747741868817644, "background_probability": 0.2677270501809674, "seconds": 24.480088357}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold0", "epoch": 2, "loss": 1.181150108575821, "bce": 0.19755648324886957, "soft_dice_loss": 0.9835936278104782, "positive_fraction": 0.00775563179437692, "foreground_probability": 0.1956090926296494, "background_probability": 0.16948256078797877, "seconds": 23.30170784699999}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold0", "epoch": 3, "loss": 1.1070375517010689, "bce": 0.13749637765189013, "soft_dice_loss": 0.9695411697030067, "positive_fraction": 0.008948788968458151, "foreground_probability": 0.24304277554804257, "background_probability": 0.11406193932061949, "seconds": 24.01768468099999}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold0", "epoch": 4, "loss": 1.0593979122738044, "bce": 0.0991671746596694, "soft_dice_loss": 0.9602307416498661, "positive_fraction": 0.00920192816799196, "foreground_probability": 0.22719509779902192, "background_probability": 0.07772964484237072, "seconds": 24.89062091400001}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold0", "epoch": 5, "loss": 0.9511265891293684, "bce": 0.07174479418123762, "soft_dice_loss": 0.8793817944824696, "positive_fraction": 0.00862276715633925, "foreground_probability": 0.5377426952561575, "background_probability": 0.0515882621336539, "seconds": 24.563638085000093}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold0", "epoch": 6, "loss": 0.8739651590585709, "bce": 0.0540984357551982, "soft_dice_loss": 0.8198667255540689, "positive_fraction": 0.00965787972866868, "foreground_probability": 0.49591035312723747, "background_probability": 0.02906972876315277, "seconds": 24.27287382999998}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold0", "epoch": 7, "loss": 0.7966131580372652, "bce": 0.04247804160695523, "soft_dice_loss": 0.7541351119677225, "positive_fraction": 0.00877642038782748, "foreground_probability": 0.5186166792233193, "background_probability": 0.01733819119781289, "seconds": 24.404594780000025}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold0", "epoch": 8, "loss": 0.757068275163571, "bce": 0.03883153413577626, "soft_dice_loss": 0.7182367431620756, "positive_fraction": 0.008404522479395382, "foreground_probability": 0.4766701962563398, "background_probability": 0.0099070511182323, "seconds": 24.560177137999972}
+{"variant": "raw_radius", "fold": 0, "inference_images": 25, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 50, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 75, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 100, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 125, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 150, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 175, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 200, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 225, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 250, "total": 279}
+{"variant": "raw_radius", "fold": 0, "inference_images": 275, "total": 279}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold1", "epoch": 1, "loss": 1.2761328766743343, "bce": 0.29367744891593855, "soft_dice_loss": 0.9824554237226645, "positive_fraction": 0.009405817877753483, "foreground_probability": 0.24689628842928066, "background_probability": 0.24422138557289208, "seconds": 24.90468440199993}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold1", "epoch": 2, "loss": 1.165199873348077, "bce": 0.18070948217064142, "soft_dice_loss": 0.9844903921087583, "positive_fraction": 0.008504550188566403, "foreground_probability": 0.15715535615489978, "background_probability": 0.15284209257580184, "seconds": 24.690332389000105}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold1", "epoch": 3, "loss": 1.1099526584148407, "bce": 0.1248621850584944, "soft_dice_loss": 0.9850904705623785, "positive_fraction": 0.008559277286015762, "foreground_probability": 0.10913775486038185, "background_probability": 0.10092491356531066, "seconds": 24.072284364000097}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold1", "epoch": 4, "loss": 1.0806452259421349, "bce": 0.0959046605663995, "soft_dice_loss": 0.9847405677040418, "positive_fraction": 0.009505666481951872, "foreground_probability": 0.07386276071616386, "background_probability": 0.06914875535514019, "seconds": 24.26019950099999}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold1", "epoch": 5, "loss": 1.0606556956966717, "bce": 0.07927606642867129, "soft_dice_loss": 0.9813796331485113, "positive_fraction": 0.008470540553389583, "foreground_probability": 0.08570159007870122, "background_probability": 0.05477978057896593, "seconds": 24.644043362000048}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold1", "epoch": 6, "loss": 1.0475711474816005, "bce": 0.06964111514389515, "soft_dice_loss": 0.9779300342003504, "positive_fraction": 0.009302418004760208, "foreground_probability": 0.0870071872939114, "background_probability": 0.042959041555987246, "seconds": 24.382624723999925}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold1", "epoch": 7, "loss": 1.0406381810704868, "bce": 0.05829510698094964, "soft_dice_loss": 0.9823430838684241, "positive_fraction": 0.00829992953610296, "foreground_probability": 0.05200767806664774, "background_probability": 0.03222821627803531, "seconds": 24.365410204}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold1", "epoch": 8, "loss": 0.9554880708456039, "bce": 0.05426684770888338, "soft_dice_loss": 0.9012212231755257, "positive_fraction": 0.00750968990905676, "foreground_probability": 0.33794036785730075, "background_probability": 0.033571490499566786, "seconds": 24.409347012999888}
+{"variant": "raw_radius", "fold": 1, "inference_images": 25, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 50, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 75, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 100, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 125, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 150, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 175, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 200, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 225, "total": 268}
+{"variant": "raw_radius", "fold": 1, "inference_images": 250, "total": 268}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold2", "epoch": 1, "loss": 1.2459589416782062, "bce": 0.2668451263258855, "soft_dice_loss": 0.9791138047973315, "positive_fraction": 0.0112863673469595, "foreground_probability": 0.23147546709700964, "background_probability": 0.21947758659761682, "seconds": 24.686868562999962}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold2", "epoch": 2, "loss": 1.1332508300741513, "bce": 0.1521317893639207, "soft_dice_loss": 0.9811190503338972, "positive_fraction": 0.009443473177573955, "foreground_probability": 0.14418780642287946, "background_probability": 0.12589226345271984, "seconds": 24.801312410000037}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold2", "epoch": 3, "loss": 1.0796039899190266, "bce": 0.10939420123274128, "soft_dice_loss": 0.9702097835640112, "positive_fraction": 0.01026063928535829, "foreground_probability": 0.16434148483165992, "background_probability": 0.08456193360801248, "seconds": 24.187089632000152}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold2", "epoch": 4, "loss": 1.0293501702447732, "bce": 0.08495943170661728, "soft_dice_loss": 0.944390743970871, "positive_fraction": 0.010289934939161563, "foreground_probability": 0.2374465934617014, "background_probability": 0.06171238265708853, "seconds": 24.269696013000157}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold2", "epoch": 5, "loss": 0.9292305869360765, "bce": 0.06895569153130054, "soft_dice_loss": 0.8602748972674211, "positive_fraction": 0.011317616740901334, "foreground_probability": 0.4363333259459812, "background_probability": 0.04070932183035215, "seconds": 24.541977636999945}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold2", "epoch": 6, "loss": 0.8486505908270677, "bce": 0.053126536503744624, "soft_dice_loss": 0.795524055759112, "positive_fraction": 0.01082567754686655, "foreground_probability": 0.44549733737923874, "background_probability": 0.023216624026472434, "seconds": 24.43539933000011}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold2", "epoch": 7, "loss": 0.793424359212319, "bce": 0.05033784084177265, "soft_dice_loss": 0.7430865180989107, "positive_fraction": 0.010734496327737967, "foreground_probability": 0.45732294949560465, "background_probability": 0.015995934416293416, "seconds": 24.376212112000076}
+{"variant": "raw_radius", "run": "runs/v4_native/raw_radius/fold2", "epoch": 8, "loss": 0.7394580530623595, "bce": 0.04191856489827236, "soft_dice_loss": 0.6975394921998183, "positive_fraction": 0.008946388950183367, "foreground_probability": 0.46944805095665487, "background_probability": 0.009649014824545863, "seconds": 24.347854799999823}
+{"variant": "raw_radius", "fold": 2, "inference_images": 25, "total": 111}
+{"variant": "raw_radius", "fold": 2, "inference_images": 50, "total": 111}
+{"variant": "raw_radius", "fold": 2, "inference_images": 75, "total": 111}
+{"variant": "raw_radius", "fold": 2, "inference_images": 100, "total": 111}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold0", "epoch": 1, "loss": 1.3064180289705594, "bce": 0.32207418015847605, "soft_dice_loss": 0.9843438317378362, "positive_fraction": 0.008162997677573003, "foreground_probability": 0.2751283777706933, "background_probability": 0.26717193859193306, "seconds": 24.734454234000168}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold0", "epoch": 2, "loss": 1.180740438401699, "bce": 0.19781744262824455, "soft_dice_loss": 0.9829230010509491, "positive_fraction": 0.00775563179437692, "foreground_probability": 0.20491376060771344, "background_probability": 0.1698607154128323, "seconds": 24.780808379000064}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold0", "epoch": 3, "loss": 1.1107404828071594, "bce": 0.13632538557673493, "soft_dice_loss": 0.9744150936603546, "positive_fraction": 0.008948788968458151, "foreground_probability": 0.20355951525094404, "background_probability": 0.11346466317180401, "seconds": 24.10042129700014}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold0", "epoch": 4, "loss": 1.0243497242530186, "bce": 0.10028519683207075, "soft_dice_loss": 0.9240645232299963, "positive_fraction": 0.00920192816799196, "foreground_probability": 0.4484201074319263, "background_probability": 0.07959863757055204, "seconds": 24.228506873999777}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold0", "epoch": 5, "loss": 0.934885784983635, "bce": 0.06729793416646619, "soft_dice_loss": 0.8675878507395586, "positive_fraction": 0.00862276715633925, "foreground_probability": 0.5507249094300516, "background_probability": 0.04778000152702583, "seconds": 24.482991392999793}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold0", "epoch": 6, "loss": 0.8490687385201454, "bce": 0.051023304966899254, "soft_dice_loss": 0.7980454365412394, "positive_fraction": 0.00965787972866868, "foreground_probability": 0.5296314866552514, "background_probability": 0.0276270443994995, "seconds": 24.436821440999665}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold0", "epoch": 7, "loss": 0.7886102572083473, "bce": 0.04300900412878642, "soft_dice_loss": 0.7456012554466724, "positive_fraction": 0.00877642038782748, "foreground_probability": 0.5307292850257723, "background_probability": 0.017058019749980037, "seconds": 24.337078241999734}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold0", "epoch": 8, "loss": 0.7586255595088005, "bce": 0.04017559361333648, "soft_dice_loss": 0.7184499613940716, "positive_fraction": 0.008404522479395382, "foreground_probability": 0.4699963220375758, "background_probability": 0.011364288639535088, "seconds": 24.349088032000054}
+{"variant": "flat_radius", "fold": 0, "inference_images": 25, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 50, "total": 279}
+/usr/local/lib/python3.13/dist-packages/numpy/_core/fromnumeric.py:3904: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/usr/local/lib/python3.13/dist-packages/numpy/_core/_methods.py:147: RuntimeWarning: invalid value encountered in divide
+  ret = ret.dtype.type(ret / rcount)
+{"variant": "flat_radius", "fold": 0, "inference_images": 75, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 100, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 125, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 150, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 175, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 200, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 225, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 250, "total": 279}
+{"variant": "flat_radius", "fold": 0, "inference_images": 275, "total": 279}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold1", "epoch": 1, "loss": 1.2765081226825714, "bce": 0.2938564708456397, "soft_dice_loss": 0.9826516608397166, "positive_fraction": 0.009405817877753483, "foreground_probability": 0.24449228113770788, "background_probability": 0.24435630967862554, "seconds": 24.966369332999875}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold1", "epoch": 2, "loss": 1.1656899104515712, "bce": 0.18092202115803957, "soft_dice_loss": 0.984767892708381, "positive_fraction": 0.008504550188566403, "foreground_probability": 0.15447075738112157, "background_probability": 0.15293097190456428, "seconds": 24.544293156000094}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold1", "epoch": 3, "loss": 1.1100487957398097, "bce": 0.12463619420304894, "soft_dice_loss": 0.98541259765625, "positive_fraction": 0.008559277286015762, "foreground_probability": 0.10590252508262551, "background_probability": 0.10065036661296538, "seconds": 24.036727538999912}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold1", "epoch": 4, "loss": 1.075122095644474, "bce": 0.09813072221974532, "soft_dice_loss": 0.9769913703203201, "positive_fraction": 0.009505666481951872, "foreground_probability": 0.11763694880429253, "background_probability": 0.07287503530615057, "seconds": 24.321430754000176}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold1", "epoch": 5, "loss": 1.0564912259578705, "bce": 0.0759329511007915, "soft_dice_loss": 0.9805582699676355, "positive_fraction": 0.008470540553389583, "foreground_probability": 0.08409795312279529, "background_probability": 0.052044799499547253, "seconds": 24.512533909000012}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold1", "epoch": 6, "loss": 1.0286383628845215, "bce": 0.07103064275967579, "soft_dice_loss": 0.957607718805472, "positive_fraction": 0.009302418004760208, "foreground_probability": 0.17582509752894787, "background_probability": 0.049177376769741724, "seconds": 24.357523296999716}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold1", "epoch": 7, "loss": 0.9566482491791248, "bce": 0.056627896653177835, "soft_dice_loss": 0.900020357221365, "positive_fraction": 0.00829992953610296, "foreground_probability": 0.3634631726651577, "background_probability": 0.03611367720709513, "seconds": 24.340423375000228}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold1", "epoch": 8, "loss": 0.9050532827774683, "bce": 0.04844406592504432, "soft_dice_loss": 0.8566092178225517, "positive_fraction": 0.00750968990905676, "foreground_probability": 0.3664871516997937, "background_probability": 0.02107179459773405, "seconds": 24.368007400999886}
+{"variant": "flat_radius", "fold": 1, "inference_images": 25, "total": 268}
+{"variant": "flat_radius", "fold": 1, "inference_images": 50, "total": 268}
+/usr/local/lib/python3.13/dist-packages/numpy/_core/fromnumeric.py:3904: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/usr/local/lib/python3.13/dist-packages/numpy/_core/_methods.py:147: RuntimeWarning: invalid value encountered in divide
+  ret = ret.dtype.type(ret / rcount)
+{"variant": "flat_radius", "fold": 1, "inference_images": 75, "total": 268}
+{"variant": "flat_radius", "fold": 1, "inference_images": 100, "total": 268}
+{"variant": "flat_radius", "fold": 1, "inference_images": 125, "total": 268}
+{"variant": "flat_radius", "fold": 1, "inference_images": 150, "total": 268}
+{"variant": "flat_radius", "fold": 1, "inference_images": 175, "total": 268}
+{"variant": "flat_radius", "fold": 1, "inference_images": 200, "total": 268}
+{"variant": "flat_radius", "fold": 1, "inference_images": 225, "total": 268}
+{"variant": "flat_radius", "fold": 1, "inference_images": 250, "total": 268}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold2", "epoch": 1, "loss": 1.2403715923428535, "bce": 0.2614375362172723, "soft_dice_loss": 0.9789340570569038, "positive_fraction": 0.0112863673469595, "foreground_probability": 0.22922633116406557, "background_probability": 0.21544278016820329, "seconds": 24.892983879999974}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold2", "epoch": 2, "loss": 1.1256231119235356, "bce": 0.15166685124859214, "soft_dice_loss": 0.9739562720060349, "positive_fraction": 0.009443473177573955, "foreground_probability": 0.19924179739973463, "background_probability": 0.12691321743420414, "seconds": 24.739419448000262}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold2", "epoch": 3, "loss": 1.0303340181708336, "bce": 0.10560586924354236, "soft_dice_loss": 0.9247281439602375, "positive_fraction": 0.01026063928535829, "foreground_probability": 0.41523159727988757, "background_probability": 0.08394840107315711, "seconds": 24.16426390000015}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold2", "epoch": 4, "loss": 0.9398656189441681, "bce": 0.07305857841856778, "soft_dice_loss": 0.8668070373435816, "positive_fraction": 0.010289934939161563, "foreground_probability": 0.4954692334601827, "background_probability": 0.050740148478869054, "seconds": 24.315939207000156}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold2", "epoch": 5, "loss": 0.8420771037538847, "bce": 0.054434417242494725, "soft_dice_loss": 0.7876426863173643, "positive_fraction": 0.011317616740901334, "foreground_probability": 0.5361523624192689, "background_probability": 0.02911169678611487, "seconds": 24.603709309999886}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold2", "epoch": 6, "loss": 0.7857904943327109, "bce": 0.04581454241027435, "soft_dice_loss": 0.7399759516119957, "positive_fraction": 0.01082567754686655, "foreground_probability": 0.5314896766488513, "background_probability": 0.017865955001462725, "seconds": 24.39700519400003}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold2", "epoch": 7, "loss": 0.7388181388378143, "bce": 0.04470091041487952, "soft_dice_loss": 0.6941172232230505, "positive_fraction": 0.010734496327737967, "foreground_probability": 0.5389574664374116, "background_probability": 0.012664075108432085, "seconds": 24.33220681900002}
+{"variant": "flat_radius", "run": "runs/v4_native/flat_radius/fold2", "epoch": 8, "loss": 0.7051735371351242, "bce": 0.039246421811791755, "soft_dice_loss": 0.6659271183113257, "positive_fraction": 0.008946388950183367, "foreground_probability": 0.5010640436971535, "background_probability": 0.008181896933414824, "seconds": 24.381237323000278}
+{"variant": "flat_radius", "fold": 2, "inference_images": 25, "total": 111}
+{"variant": "flat_radius", "fold": 2, "inference_images": 50, "total": 111}
+{"variant": "flat_radius", "fold": 2, "inference_images": 75, "total": 111}
+{"variant": "flat_radius", "fold": 2, "inference_images": 100, "total": 111}
+{"candidate": "flat_radius_group", "best": {"global": {"pq": 0.1396276602228051, "tp": 2261, "fp": 10382, "fn": 5663, "sum_iou": 1435.8610439012161, "observations": 658, "annotator_image_records": 1079}, "per_fold": {"0": {"pq": 0.141781172904463, "tp": 947, "fp": 3794, "fn": 2784, "sum_iou": 600.5850484233052, "observations": 279, "annotator_image_records": 467}, "1": {"pq": 0.14462274891600913, "tp": 1119, "fp": 5036, "fn": 2580, "sum_iou": 712.556283909177, "observations": 268, "annotator_image_records": 428}, "2": {"pq": 0.10952227716977604, "tp": 195, "fp": 1552, "fn": 299, "sum_iou": 122.71971156873406, "observations": 111, "annotator_image_records": 184}}, "per_year": {"2011": {"pq": 0.14679212553005797, "tp": 284, "fp": 1090, "fn": 782, "sum_iou": 179.0863931466707, "observations": 86, "annotator_image_records": 150}, "2012": {"pq": 0.13599386189445237, "tp": 319, "fp": 1355, "fn": 978, "sum_iou": 202.01888184420898, "observations": 92, "annotator_image_records": 161}, "2013": {"pq": 0.1434039682668576, "tp": 344, "fp": 1349, "fn": 1024, "sum_iou": 219.4797734324256, "observations": 101, "annotator_image_records": 156}, "2014": {"pq": 0.16286676620894683, "tp": 512, "fp": 1923, "fn": 1095, "sum_iou": 329.15373450828156, "observations": 102, "annotator_image_records": 161}, "2015": {"pq": 0.12554808123103323, "tp": 353, "fp": 1930, "fn": 913, "sum_iou": 222.78507014446848, "observations": 86, "annotator_image_records": 140}, "2016": {"pq": 0.14195093173347492, "tp": 254, "fp": 1183, "fn": 572, "sum_iou": 160.61747925642686, "observations": 80, "annotator_image_records": 127}, "2017": {"pq": 0.11370316417339589, "tp": 152, "fp": 1141, "fn": 233, "sum_iou": 95.39695474147915, "observations": 71, "annotator_image_records": 118}, "2018": {"pq": 0.09621322105981765, "tp": 28, "fp": 275, "fn": 38, "sum_iou": 17.751339285536357, "observations": 26, "annotator_image_records": 42}, "2019": {"pq": 0.09867440764658311, "tp": 15, "fp": 136, "fn": 28, "sum_iou": 9.571417541718562, "observations": 14, "annotator_image_records": 24}}, "metric": "v3 score_frames counts pooled; strict IoU > 0.5 per annotator-image", "numerical_note": "float64 COCO IoU; official float32 overlap can differ at threshold rounding"}, "baseline": {"pq": 0.17704722518489124, "tp": 2245, "fp": 6084, "fn": 5679, "sum_iou": 1438.7742754650187, "folds": {"0": 0.17420645966467033, "1": 0.17700775951698644, "2": 0.1981921814043778}}, "periods_improved": 0, "continue_gpu": false, "rule": {"pooled_pq_min": 0.19704722518489123, "periods_improved_min": 2, "minimum_period_pq": 0.05, "max_actual_gpu_session_hours": 2.0}, "elapsed_seconds": 3427.582666888, "interpretation": "Budget gate on reused development groups, not independent validation or significance", "holdout_policy": "v3 single frozen holdout result retained; V4 does not inspect or score its labels", "next_action": "Stop additional GPU spending; retain official v3 baseline", "automatic_further_runs": false}
