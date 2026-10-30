@@ -1,0 +1,11 @@
+{
+  "seed": 20261030,
+  "device": "mps",
+  "size": 512,
+  "epochs": 8,
+  "batch_size": 4,
+  "lr": 0.001,
+  "steps_per_epoch": 48,
+  "base_channels": 16,
+  "num_workers": 0
+}

@@ -1,0 +1,556 @@
+{
+  "review_type": "same-family analysis, provisional causal interpretation",
+  "scope": "frozen v3 development folds 0,1,2 only; no holdout/test-label analysis",
+  "no_model_execution": true,
+  "sample_selection": {
+    "0": [
+      "20110109104734Ch",
+      "20110823120334Ch",
+      "20120330063154Uh",
+      "20121027165114Mh",
+      "20130705161714Mh",
+      "20131229112414Th"
+    ],
+    "1": [
+      "20140111224134Lh",
+      "20140723071614Th",
+      "20150119082034Lh",
+      "20150830084134Lh",
+      "20160401170314Mh",
+      "20161231133734Ch"
+    ],
+    "2": [
+      "20170102024454Uh",
+      "20170417232530Lh",
+      "20170831170750Bh",
+      "20171115170950Bh",
+      "20180923112330Ch",
+      "20190927165910Mh"
+    ]
+  },
+  "configuration": {
+    "0": {
+      "seed": 20261030,
+      "device": "cuda",
+      "size": 512,
+      "epochs": 8,
+      "batch_size": 4,
+      "lr": 0.001,
+      "steps_per_epoch": 48,
+      "base_channels": 16,
+      "num_workers": 0
+    },
+    "1": {
+      "seed": 20261031,
+      "device": "cuda",
+      "size": 512,
+      "epochs": 8,
+      "batch_size": 4,
+      "lr": 0.001,
+      "steps_per_epoch": 48,
+      "base_channels": 16,
+      "num_workers": 0
+    },
+    "2": {
+      "seed": 20261032,
+      "device": "cuda",
+      "size": 512,
+      "epochs": 8,
+      "batch_size": 4,
+      "lr": 0.001,
+      "steps_per_epoch": 48,
+      "base_channels": 16,
+      "num_workers": 0
+    }
+  },
+  "fold_summary": {
+    "0": {
+      "validation_images": 279,
+      "train_images": 375,
+      "updates": 384,
+      "image_draws_with_replacement": 1536,
+      "expected_unique_training_images_per_epoch": 150.4177200304229,
+      "probability_mean": 0.024547606005623775,
+      "probability_image_max_percentiles": {
+        "0": 0.18310546875,
+        "1": 0.2173974609375,
+        "10": 0.292822265625,
+        "50": 0.401123046875,
+        "90": 0.469970703125,
+        "99": 0.49638183593749985,
+        "100": 0.50341796875
+      },
+      "probability_image_q99_percentiles": {
+        "0": 0.06375598907470703,
+        "1": 0.06913330078125,
+        "10": 0.071533203125,
+        "50": 0.07501220703125,
+        "90": 0.08250732421875001,
+        "99": 0.09395307540893552,
+        "100": 0.09991455078125
+      },
+      "target_soft_fraction_sample_mean": 0.0031082601441691318,
+      "target_soft_fraction_sample_percentiles": {
+        "0": 0.0012102463515475392,
+        "1": 0.0012149698450230062,
+        "10": 0.001257481286302209,
+        "50": 0.002624825923703611,
+        "90": 0.005442473222501576,
+        "99": 0.00697275676066056,
+        "100": 0.007142788264900446
+      },
+      "foreground_probability_sample_mean": 0.089731282244126,
+      "background_probability_sample_mean": 0.028890582732856274,
+      "alignment_reconstruction_max_error": 0.0019608139991760254,
+      "instance_width_full_pixel_percentiles": {
+        "0": 3.82000732421875,
+        "1": 3.82000732421875,
+        "10": 4.317156982421875,
+        "50": 9.29718017578125,
+        "90": 16.78975524902344,
+        "99": 25.971423339843746,
+        "100": 26.74005126953125
+      },
+      "sample_instances": 77,
+      "sample_instances_no_gt_half_pixel_at_512": 0,
+      "sample_instances_gt_half_area_under_25_at_512": 7,
+      "training_history": [
+        {
+          "epoch": 1,
+          "loss": 1.3139159406224887,
+          "seconds": 29.317820388999735
+        },
+        {
+          "epoch": 2,
+          "loss": 1.183556117117405,
+          "seconds": 26.862084757000048
+        },
+        {
+          "epoch": 3,
+          "loss": 1.117934634288152,
+          "seconds": 27.566444901000068
+        },
+        {
+          "epoch": 4,
+          "loss": 1.0811816255251567,
+          "seconds": 27.810051338999983
+        },
+        {
+          "epoch": 5,
+          "loss": 1.057884340484937,
+          "seconds": 28.27179377399989
+        },
+        {
+          "epoch": 6,
+          "loss": 1.0435086488723755,
+          "seconds": 27.974553774000015
+        },
+        {
+          "epoch": 7,
+          "loss": 1.0335390642285347,
+          "seconds": 28.00088593800001
+        },
+        {
+          "epoch": 8,
+          "loss": 1.0212657401959102,
+          "seconds": 28.115632615000322
+        }
+      ],
+      "all_map_pixel_fraction_gt_0.3": 0.00017607767522121416,
+      "images_with_no_pixel_gt_0.3": 33,
+      "all_map_pixel_fraction_gt_0.45": 5.564809272793459e-06,
+      "images_with_no_pixel_gt_0.45": 221,
+      "all_map_pixel_fraction_gt_0.6": 0.0,
+      "images_with_no_pixel_gt_0.6": 279,
+      "reconstructed_sampling": {
+        "unique_images_per_epoch": [
+          149,
+          150,
+          150,
+          156,
+          152,
+          146,
+          151,
+          146
+        ],
+        "unique_images_all_epochs": 366,
+        "unseen_training_images": 9,
+        "method": "NumPy RandomState replay from recorded seed, num_workers=0, and image/rotation/flip draw order; reconstructed, not an original logged schedule"
+      }
+    },
+    "1": {
+      "validation_images": 268,
+      "train_images": 379,
+      "updates": 384,
+      "image_draws_with_replacement": 1536,
+      "expected_unique_training_images_per_epoch": 150.78905736750224,
+      "probability_mean": 0.020679135473250454,
+      "probability_image_max_percentiles": {
+        "0": 0.1168212890625,
+        "1": 0.127362060546875,
+        "10": 0.1290283203125,
+        "50": 0.1318359375,
+        "90": 0.13431396484375,
+        "99": 0.14751586914062487,
+        "100": 0.1546630859375
+      },
+      "probability_image_q99_percentiles": {
+        "0": 0.033843994140625,
+        "1": 0.0342730712890625,
+        "10": 0.03662109375,
+        "50": 0.0402984619140625,
+        "90": 0.04787144660949707,
+        "99": 0.05440673828124997,
+        "100": 0.056640625
+      },
+      "target_soft_fraction_sample_mean": 0.0033686941800018153,
+      "target_soft_fraction_sample_percentiles": {
+        "0": 0.0020456351339817047,
+        "1": 0.0020693004713393747,
+        "10": 0.0022822885075584054,
+        "50": 0.002644348074682057,
+        "90": 0.005179445957764983,
+        "99": 0.007054997584782541,
+        "100": 0.007263392210006714
+      },
+      "foreground_probability_sample_mean": 0.036609518031279244,
+      "background_probability_sample_mean": 0.024709084381659824,
+      "alignment_reconstruction_max_error": 0.0019608139991760254,
+      "instance_width_full_pixel_percentiles": {
+        "0": 4.648590087890625,
+        "1": 4.648590087890625,
+        "10": 5.7047271728515625,
+        "50": 8.549324035644531,
+        "90": 15.052474975585938,
+        "99": 28.44746368408196,
+        "100": 40.52436828613281
+      },
+      "sample_instances": 60,
+      "sample_instances_no_gt_half_pixel_at_512": 0,
+      "sample_instances_gt_half_area_under_25_at_512": 7,
+      "training_history": [
+        {
+          "epoch": 1,
+          "loss": 1.2904745539029439,
+          "seconds": 27.520991762999984
+        },
+        {
+          "epoch": 2,
+          "loss": 1.1664834519227345,
+          "seconds": 27.28907434599978
+        },
+        {
+          "epoch": 3,
+          "loss": 1.105628567437331,
+          "seconds": 27.15855647699982
+        },
+        {
+          "epoch": 4,
+          "loss": 1.0732726355393727,
+          "seconds": 27.237425036999866
+        },
+        {
+          "epoch": 5,
+          "loss": 1.0514620890220006,
+          "seconds": 27.17471533099979
+        },
+        {
+          "epoch": 6,
+          "loss": 1.0390499457716942,
+          "seconds": 27.118395978999615
+        },
+        {
+          "epoch": 7,
+          "loss": 1.0342792347073555,
+          "seconds": 27.211320309000257
+        },
+        {
+          "epoch": 8,
+          "loss": 1.0250473196307819,
+          "seconds": 27.261305424000057
+        }
+      ],
+      "all_map_pixel_fraction_gt_0.3": 0.0,
+      "images_with_no_pixel_gt_0.3": 268,
+      "all_map_pixel_fraction_gt_0.45": 0.0,
+      "images_with_no_pixel_gt_0.45": 268,
+      "all_map_pixel_fraction_gt_0.6": 0.0,
+      "images_with_no_pixel_gt_0.6": 268,
+      "reconstructed_sampling": {
+        "unique_images_per_epoch": [
+          148,
+          145,
+          148,
+          149,
+          144,
+          154,
+          148,
+          148
+        ],
+        "unique_images_all_epochs": 375,
+        "unseen_training_images": 4,
+        "method": "NumPy RandomState replay from recorded seed, num_workers=0, and image/rotation/flip draw order; reconstructed, not an original logged schedule"
+      }
+    },
+    "2": {
+      "validation_images": 111,
+      "train_images": 540,
+      "updates": 384,
+      "image_draws_with_replacement": 1536,
+      "expected_unique_training_images_per_epoch": 161.70135156916353,
+      "probability_mean": 0.005059919810879069,
+      "probability_image_max_percentiles": {
+        "0": 0.8154296875,
+        "1": 0.836669921875,
+        "10": 0.99560546875,
+        "50": 1.0,
+        "90": 1.0,
+        "99": 1.0,
+        "100": 1.0
+      },
+      "probability_image_q99_percentiles": {
+        "0": 0.00679779052734375,
+        "1": 0.007315200567245483,
+        "10": 0.009716629981994629,
+        "50": 0.01154327392578125,
+        "90": 0.01419830322265625,
+        "99": 0.4854492187500009,
+        "100": 0.82763671875
+      },
+      "target_soft_fraction_sample_mean": 0.0008722093189135194,
+      "target_soft_fraction_sample_percentiles": {
+        "0": 0.00023462632088921964,
+        "1": 0.0002397507312707603,
+        "10": 0.0002858704247046262,
+        "50": 0.0007416669104713947,
+        "90": 0.0015890906215645373,
+        "99": 0.0019989842840004712,
+        "100": 0.0020445280242711306
+      },
+      "foreground_probability_sample_mean": 0.3870057687163353,
+      "background_probability_sample_mean": 0.004303104554613431,
+      "alignment_reconstruction_max_error": 0.0019608139991760254,
+      "instance_width_full_pixel_percentiles": {
+        "0": 5.730010986328125,
+        "1": 5.730010986328125,
+        "10": 6.310018920898438,
+        "50": 7.927886962890625,
+        "90": 14.590359497070315,
+        "99": 27.83963470458982,
+        "100": 30.12445068359375
+      },
+      "sample_instances": 18,
+      "sample_instances_no_gt_half_pixel_at_512": 0,
+      "sample_instances_gt_half_area_under_25_at_512": 3,
+      "training_history": [
+        {
+          "epoch": 1,
+          "loss": 1.2252786234021187,
+          "seconds": 28.438027357000465
+        },
+        {
+          "epoch": 2,
+          "loss": 1.1200847029685974,
+          "seconds": 28.0023681319999
+        },
+        {
+          "epoch": 3,
+          "loss": 1.0753628313541412,
+          "seconds": 27.86132334300055
+        },
+        {
+          "epoch": 4,
+          "loss": 1.0498813663919766,
+          "seconds": 27.497252109999863
+        },
+        {
+          "epoch": 5,
+          "loss": 1.0355036705732346,
+          "seconds": 27.62598159299978
+        },
+        {
+          "epoch": 6,
+          "loss": 1.0277401593824227,
+          "seconds": 27.5351792499996
+        },
+        {
+          "epoch": 7,
+          "loss": 0.9433591924607754,
+          "seconds": 27.65337639399968
+        },
+        {
+          "epoch": 8,
+          "loss": 0.757277712225914,
+          "seconds": 27.387251875999937
+        }
+      ],
+      "all_map_pixel_fraction_gt_0.3": 0.0023881035882073478,
+      "images_with_no_pixel_gt_0.3": 0,
+      "all_map_pixel_fraction_gt_0.45": 0.001933157980979026,
+      "images_with_no_pixel_gt_0.45": 0,
+      "all_map_pixel_fraction_gt_0.6": 0.0014230539132882884,
+      "images_with_no_pixel_gt_0.6": 0,
+      "reconstructed_sampling": {
+        "unique_images_per_epoch": [
+          163,
+          153,
+          167,
+          162,
+          156,
+          172,
+          162,
+          162
+        ],
+        "unique_images_all_epochs": 507,
+        "unseen_training_images": 33,
+        "method": "NumPy RandomState replay from recorded seed, num_workers=0, and image/rotation/flip draw order; reconstructed, not an original logged schedule"
+      }
+    }
+  },
+  "candidate_persisted_counts": {
+    "unet_t30_c1": {
+      "0": {
+        "tp": 6,
+        "fp": 201,
+        "fn": 3725,
+        "prediction_instances": 124,
+        "images_with_instances": 89,
+        "pq": 0.0016700512256231808
+      },
+      "1": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3699,
+        "prediction_instances": 0,
+        "images_with_instances": 0,
+        "pq": 0.0
+      },
+      "2": {
+        "tp": 127,
+        "fp": 731,
+        "fn": 367,
+        "prediction_instances": 499,
+        "images_with_instances": 109,
+        "pq": 0.11388148720786649
+      }
+    },
+    "unet_t45_c1": {
+      "0": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 3731,
+        "prediction_instances": 2,
+        "images_with_instances": 2,
+        "pq": 0.0
+      },
+      "1": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3699,
+        "prediction_instances": 0,
+        "images_with_instances": 0,
+        "pq": 0.0
+      },
+      "2": {
+        "tp": 122,
+        "fp": 609,
+        "fn": 372,
+        "prediction_instances": 427,
+        "images_with_instances": 106,
+        "pq": 0.12236581286176189
+      }
+    },
+    "unet_t60_c1": {
+      "0": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3731,
+        "prediction_instances": 0,
+        "images_with_instances": 0,
+        "pq": 0.0
+      },
+      "1": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3699,
+        "prediction_instances": 0,
+        "images_with_instances": 0,
+        "pq": 0.0
+      },
+      "2": {
+        "tp": 129,
+        "fp": 527,
+        "fn": 365,
+        "prediction_instances": 381,
+        "images_with_instances": 104,
+        "pq": 0.13739475941126914
+      }
+    },
+    "unet_t45_c3": {
+      "0": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 3731,
+        "prediction_instances": 2,
+        "images_with_instances": 2,
+        "pq": 0.0
+      },
+      "1": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3699,
+        "prediction_instances": 0,
+        "images_with_instances": 0,
+        "pq": 0.0
+      },
+      "2": {
+        "tp": 122,
+        "fp": 607,
+        "fn": 372,
+        "prediction_instances": 427,
+        "images_with_instances": 106,
+        "pq": 0.12268940744803158
+      }
+    },
+    "hybrid_50": {
+      "0": {
+        "tp": 1031,
+        "fp": 2937,
+        "fn": 2700,
+        "prediction_instances": 2469,
+        "images_with_instances": 278,
+        "pq": 0.1740610027358189
+      },
+      "1": {
+        "tp": 998,
+        "fp": 2849,
+        "fn": 2701,
+        "prediction_instances": 2361,
+        "images_with_instances": 266,
+        "pq": 0.17134178917737958
+      },
+      "2": {
+        "tp": 202,
+        "fp": 718,
+        "fn": 292,
+        "prediction_instances": 543,
+        "images_with_instances": 109,
+        "pq": 0.17814542664563082
+      }
+    }
+  },
+  "sources": [
+    "results/kaggle_v3/project/runs/unet_v1",
+    "src/solarseg/neural.py",
+    "src/solarseg/prepare.py",
+    "src/solarseg/pipeline.py",
+    "data/processed/masks",
+    "official competition train polygons for 18 declared samples"
+  ],
+  "limitations": [
+    "Saved maps are float16 after 512->2048->512 interpolation, so sub-threshold boundary detail is approximate.",
+    "Original-image/target diagnostics use 18 prespecified development observations; scale summaries are not population estimates.",
+    "v3 did not log sampled image IDs; deterministic NumPy replay reconstructs coverage under the saved source and num_workers=0, but is not a contemporaneous sample log.",
+    "No causal ablation is run here; fixes must be tested on the development groups on Kaggle."
+  ]
+}

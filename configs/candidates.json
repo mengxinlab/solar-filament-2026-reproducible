@@ -1,0 +1,56 @@
+[
+  {
+    "id": "public_reference_sigma64",
+    "sigmas": [64],
+    "threshold": 0.04,
+    "closing_radius": 0,
+    "min_area": 800,
+    "max_area": 100000,
+    "min_elongation": 2.0
+  },
+  {
+    "id": "sigma32_close2",
+    "sigmas": [32],
+    "threshold": 0.04,
+    "closing_radius": 2,
+    "min_area": 500,
+    "max_area": 100000,
+    "min_elongation": 1.5
+  },
+  {
+    "id": "sigma64_recall",
+    "sigmas": [64],
+    "threshold": 0.03,
+    "closing_radius": 2,
+    "min_area": 500,
+    "max_area": 100000,
+    "min_elongation": 1.5
+  },
+  {
+    "id": "sigma64_precision",
+    "sigmas": [64],
+    "threshold": 0.05,
+    "closing_radius": 2,
+    "min_area": 800,
+    "max_area": 100000,
+    "min_elongation": 2.0
+  },
+  {
+    "id": "sigma64_close3",
+    "sigmas": [64],
+    "threshold": 0.04,
+    "closing_radius": 3,
+    "min_area": 500,
+    "max_area": 100000,
+    "min_elongation": 1.5
+  },
+  {
+    "id": "multiscale32_64",
+    "sigmas": [32, 64],
+    "threshold": 0.04,
+    "closing_radius": 2,
+    "min_area": 500,
+    "max_area": 100000,
+    "min_elongation": 1.5
+  }
+]

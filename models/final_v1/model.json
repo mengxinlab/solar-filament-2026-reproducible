@@ -1,0 +1,23 @@
+{
+  "candidate": {
+    "id": "public_reference_sigma64",
+    "sigmas": [
+      64
+    ],
+    "threshold": 0.04,
+    "closing_radius": 0,
+    "min_area": 800,
+    "max_area": 100000,
+    "min_elongation": 2.0,
+    "mode": "classical"
+  },
+  "development_pq": 0.17704722518489124,
+  "holdout": {
+    "pq": 0.10560429418583897,
+    "tp": 49,
+    "fp": 261,
+    "fn": 226,
+    "sum_iou": 30.889256049357897
+  },
+  "selected_by": "development accumulated PQ; holdout evaluated once with frozen selection"
+}

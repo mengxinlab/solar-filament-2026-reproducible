@@ -1,0 +1,9 @@
+data/
+results/
+runs/
+outputs/
+offline-runtime/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

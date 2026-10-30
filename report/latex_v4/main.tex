@@ -1,0 +1,146 @@
+\documentclass[sigconf]{acmart}
+% Original report text. Template structure adapted from the MIT reference
+% repository at 81a739bb7786a44b989f5d76afbb6f9d22b5d1dd.
+% No source-report prose, author details, figures, or results are copied.
+\input{preamble}
+\begin{document}
+\title[Temporal Validation for Solar Filament Segmentation]{Solar Filament Instance Segmentation with Temporal Validation and Resolution-Aware Diagnostics}
+\subtitle{A Solution to the Solar Filament Segmentation Challenge 2026}
+\author{Participant name(s) pending}
+\affiliation{\institution{Affiliation pending}\country{Participant to complete}}
+\renewcommand{\shortauthors}{Participant name(s) pending}
+\begin{abstract}
+We study image-only instance segmentation of solar filaments in 2048$\times$2048 grayscale GONG H-alpha observations. A reproducible local-contrast baseline achieved development Panoptic Quality (PQ) 0.177047 and, after selection was frozen, PQ 0.105604 on 49 later observations. A compact whole-frame U-Net and a fixed neural--contrast mixture did not improve the development score. Diagnostics identify low neural responses, sparse positive pixels, and loss of filament scale under whole-frame downsampling, without evidence of input--target misalignment. We therefore prespecify a small native-resolution V4 comparison. Its results are pending in this draft. The first formal Kaggle submission was accepted with Public Score 0.15; this score verifies submission behavior and is excluded from parameter selection.
+\end{abstract}
+\maketitle
+\noindent\textbf{Draft status, 30 October 2026:} participant details and V4 result fields remain pending. Frozen v3 evidence is retained unchanged.
+
+\section{Problem and Data}
+Solar filaments are dark, elongated structures with weak contrast, fine barbs, fragmented visible material, and nearby non-filament dark regions. The competition requires one mask per filament, making instance identity distinct from semantic foreground detection~\cite{competition}. We seek reproducible image-only inference and a validation protocol that exposes temporal failures.
+
+The supplied archive contains 707 training and 180 test observations, all 8-bit grayscale JPEGs at 2048$\times$2048. Its COCO-style training file has 1,154 annotator--image records and 8,199 instance annotations. Independent annotators can label the same physical observation. We use only the competition training segmentation polygons. Spines, boxes, chirality labels, annotator identity, and date/station metadata are not predictive features; dates are used for partitioning.
+
+External MAGFiLO annotations are excluded because the host restricts annotation supervision to the supplied training labels and public discussion reports overlap with test imagery. We do not resolve test IDs against external labels, use other submissions, manually label test data, or exploit metric edge cases. A supplied-data exact-byte audit found no duplicate files. Some low-resolution similarity flags were attributable to common solar-disk shape when flagged training pairs were examined. This does not prove the absence of every possible dependency.
+
+\section{Temporal Protocol and Official PQ}
+The source-image blocks are 2011--2013, 2014--2016, 2017--2019, and 2020--2022, containing 279, 268, 111, and 49 images. All annotators of an observation remain together. The first three blocks are development folds; training observations within 27 days of validation dates are purged. Development also excludes observations within 27 days of the fourth block. Exact memberships are archived.
+
+The v3 method was selected on development data before its single frozen assessment on the fourth block. V4 excludes that block's labels from development. If they are used later, that subset must be explicitly downgraded to development, and later scores cannot be described as untouched holdout evidence. Public reference parameters already reflect their author's competition-data tuning, limiting claims of pristine validation.
+
+The host notebook evaluates each annotator--image separately against the same image prediction set~\cite{selfeval}. Every pair with strict $\operatorname{IoU}>0.5$ is a TP; the code does not use one-to-one assignment. FP and FN are zero-hit prediction columns and GT rows. Counts and hit IoUs are accumulated before computing
+\begin{equation}
+ \operatorname{PQ} =
+ \frac{\sum_{(g,p):\,\operatorname{IoU}(g,p)>0.5}\operatorname{IoU}(g,p)}
+ {\operatorname{TP}+0.5\operatorname{FP}+0.5\operatorname{FN}}.
+\end{equation}
+Mean image PQ and annotator-unioned GT would change this protocol. A same-family provisional audit found semantic agreement with our RLE evaluator, with a minor float32/float64 difference: a $2/3$-IoU witness differed by $1.99\times10^{-8}$, without changing hit counts. Frozen v3 scores are not rewritten. Any numeric-compatibility evaluator has its own version.
+
+\clearpage
+\section{Frozen v3 Methods and Results}
+\subsection{Contrast and Neural Models}
+The selected contrast baseline adapts Sijan Regmi's MIT code~\cite{regmi}. It finds a bright solar disk using Otsu thresholding, the largest connected region, contour filling, and erosion. Relative darkness is computed from a smoothed image and Gaussian local background. Selected parameters are background scale 64 native pixels, threshold 0.04, no closing, component area 800--100,000 native pixels, and minimum elongation 2. Disjoint components become instances. These are a public reference, not a novel method.
+
+Our compact U-Net~\cite{unet} is trained from scratch with grayscale input, GroupNorm, SiLU, and widths 16/32/64/128. Each entire observation is resized to 512$^2$. Independent annotator foreground unions are averaged into a soft target and area-resized. This union is used only for training: evaluation retains every original 2048$^2$ instance and annotator separately.
+
+Training uses BCE plus soft Dice, AdamW, fixed seeds, and matched image/target dihedral transformations. Eight epochs of 48 updates at batch size four yield 384 optimizer updates and 1,536 sampled whole-frame draws per fold, not eight exhaustive dataset passes. There is no foreground-directed sampling or neural disk-intensity normalization. Inference averages identity, horizontal, vertical, and combined flips, restores probabilities to 2048$^2$, masks off-disk regions, and extracts thresholded components. Four predefined threshold/closing variants and a fixed 50:50 neural--contrast blend were compared.
+
+\begin{table}[t]
+\caption{Selected v3 development candidates; all eleven configurations and period results are archived.}
+\label{tab:v3}
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Candidate & PQ & TP & FP & FN\\
+\midrule
+Contrast reference & .177047 & 2245 & 6084 & 5679\\
+50:50 hybrid & .173176 & 2231 & 6504 & 5693\\
+Best pure U-Net & .018415 & 129 & 527 & 7795\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Results and Formal Submission}
+The reference's development-period PQ values are 0.174206, 0.177008, and 0.198192. The hybrid added 420 FP and lost 14 TP relative to the reference; its small increase in hit-IoU sum did not offset the larger denominator. The pure neural model's period PQ was 0, 0, and 0.137395. These results selected the contrast reference.
+
+Its single later-block assessment yielded PQ \textbf{0.105604}, TP/FP/FN \textbf{49/261/226}. The absolute drop from development is 0.071443, or 40.4\%. A previously calculated calendar-month block-bootstrap interval is [0.075674, 0.127158], conditional on the selected model and observed holdout months. It is not hidden-test score uncertainty. Temporal generalization remains weak.
+
+The frozen CSV contains 1,312 nonempty instances on 175 test images; five images naturally have zero detections. Their IDs remain in the coverage manifest. No dummy masks were inserted. The file was formally uploaded as Kaggle submission \textbf{57795106}, accepted with status \textbf{COMPLETE} and Public Score \textbf{0.15}. The canonical receipt is \texttt{docs/official\_submission\_v3.md}. This score is a production submission check and is not used to choose models, thresholds, or fusion parameters.
+
+Each row has a unique \texttt{filament\_id} formed from the original image stem plus an instance suffix, and \texttt{segmentation\_rle} containing compressed ASCII COCO counts. Masks are binary Fortran-order uint8 arrays at 2048$^2$. The frozen CSV SHA-256 begins \texttt{c8e6ac199a3fbe42}; the full value is recorded with the submission. Public Score and local PQ refer to different sample sets and are reported separately.
+
+The completed run used Tesla T4 (14.6 GiB reported VRAM), Python 3.13.15, PyTorch 2.11.0+cu128, and CUDA 12.8. Neural training phases took 223.9, 218.0, and 222.0 seconds, excluding preprocessing, classical search, validation inference, and packaging. No paid resource was provisioned.
+
+\clearpage
+\section{Neural Failure Diagnosis}
+The diagnostic analysis uses development observations and cached predictions; it does not inspect the frozen holdout's masks to develop V4. Existing v3 evidence remains immutable.
+
+\begin{table}[t]
+\caption{Development diagnostics. Maxima bound all validation maps in the indicated fold; foreground fractions and widths come from the prespecified diagnostic sample.}
+\label{tab:diag}
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Quantity & Fold 0 & Fold 1 & Fold 2\\
+\midrule
+Soft FG fraction & .003108 & .003369 & .000872\\
+Native median width (px) & 9.297 & 8.549 & 7.928\\
+Width after $4\times$ resize & 2.32 & 2.14 & 1.98\\
+PQ at threshold .60 & 0 & 0 & .137395\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All 268 fold-1 validation maps have maximum probability at most 0.154663, below the lowest tested threshold of 0.30; zero instances and zero TP follow from that cutoff. Fold-0 maxima are at most 0.503418, so a 0.60 threshold produces no instances. Lowering fold 0 to 0.30 still gives only 6 TP, 201 FP, and 3,725 FN. Low neural response is established; a permissive threshold is not established as a solution.
+
+On 18 prespecified development images, reconstructed cached targets agree within 0.001960814, the expected half-step uint8 quantization error. Image and target augmentations correspond. These checks provide no evidence of an alignment defect. The canonical diagnosis is \texttt{diagnostics/v4/p2\_unet\_diagnosis.md} and its JSON companion.
+
+Native median widths of roughly eight to nine pixels become only two pixels after fourfold resizing (Table~\ref{tab:diag}). Seventeen of 155 sampled instances have hard 512$^2$ areas below 25 pixels, the resized equivalent of the 400-native-pixel component filter. Whole-frame resizing and component rejection can therefore affect thin structures. Foreground is sparse, and the neural sampling policy does not target it.
+
+The combined evidence motivates native-resolution supervision, explicit sampling, and intensity normalization. It does not separately identify each factor's causal effect. Declining training loss cannot establish overfitting because the histories contain no validation learning curves. Blindly increasing epochs is not the first proposed intervention.
+
+\section{Method Reference and Controlled V4 Design}
+We inspect \texttt{ameyypawar/filament-seg} at MIT commit \texttt{81a739bb7786a44b989f5d76afbb6f9d22b5d1dd}~\cite{pawar}. It uses native 512$^2$ crops, foreground-directed sampling, radial median-profile limb-darkening correction, corrected intensity plus radius channels, and an ImageNet-initialized ResNet34 U-Net~\cite{resnet}. Its detector fusion assigns unclaimed semantic foreground to confidence-filtered, dilated YOLO11-seg regions.
+
+Its 563/144 split randomly groups dates without our embargo; postprocessing cross-fitting does not make the complete research process a blind temporal evaluation. Its greedy one-to-one scorer and treatment of prediction-only images differ from the host notebook. We neither inherit that scorer as official PQ nor compare its validation score directly to our holdout.
+
+V4 freezes two input arms, \texttt{raw\_radius} and \texttt{flat\_radius}, under the same network, initialization, and update budget. Both use native 512$^2$ crops, 50\% foreground-directed sampling, 384 updates per fold, and 25 native-resolution inference tiles per image. The only input-arm intervention is radial intensity correction; radius is available in both. Evaluation compares connected components (\texttt{cc}) and a fixed 6-pixel component-grouping option (\texttt{group6}). Threshold 0.45 and minimum area 400 native pixels are fixed before results. Exact sampling, normalization, reconstruction, and grouping definitions are retained in the frozen configuration and code.
+
+Overlapping tile predictions are consolidated before instance extraction. No duplicated crop masks, nested copies, GT-informed instance counts, or leaderboard parameter scans are permitted. All original development periods and the 27-day embargo are retained. The fourth block is excluded from V4 development.
+
+\clearpage
+\section{V4 Evidence and GPU Decision}
+\begin{table}[t]
+\caption{Prespecified V4 comparisons. Pending cells must be populated from canonical V4 artifacts before report release. No V4 result is claimed in this draft.}
+\label{tab:v4}
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrr}
+\toprule
+Input arm & Instances & PQ & TP & FP & FN\\
+\midrule
+\texttt{raw\_radius} & \texttt{cc} & \pending & \pending & \pending & \pending\\
+\texttt{raw\_radius} & \texttt{group6} & \pending & \pending & \pending & \pending\\
+\texttt{flat\_radius} & \texttt{cc} & \pending & \pending & \pending & \pending\\
+\texttt{flat\_radius} & \texttt{group6} & \pending & \pending & \pending & \pending\\
+\bottomrule
+\end{tabular}
+\end{table}
+The ordinary-T4 V4 budget is at most two GPU hours. Further GPU investment requires the prespecified development gate: pooled PQ at least 0.197047225, improvement in at least two periods, and minimum period PQ greater than 0.05. This is a decision rule, not a V4 result. The gate must be evaluated on the complete predefined development set and cannot be relaxed after observing outcomes.
+
+Report PQ, TP, FP, FN, hit-IoU sum, all period scores, training and inference cost, peak memory, zero-detection images, and representative failures for every control. The three period scores for each row of Table~\ref{tab:v4}, arm-specific GPU time/peak memory, and inference time are \textbf{\pending}. If the gate fails, stop additional GPU spending and retain the accepted v3 reference unless a separately documented, evidence-based plan is approved. A Public Leaderboard increase alone does not satisfy the gate. Canonical V4 results and the investment judgment: \textbf{\pending}.
+
+\section{Reproducibility, Licensing and Limits}
+Versioned source, configuration hashes, source-image memberships, training histories, model checkpoints, predictions, PQ counts, environment freezes, and platform receipts are preserved. v3 canonical artifacts are under \texttt{results/kaggle\_v3/project/}; v4 must use a distinct directory. The notebook illustrates the entire pipeline and loads the selected model for inference without retraining. Fixed seeds do not imply bit-identical trajectories across MPS, CUDA, CPUs, or library versions.
+
+The final release needs a public Git repository, pinned \texttt{requirements.txt}, a complete Jupyter notebook, selected model weights or classical parameters, and this four-page PDF. Author/contact details and the final repository URL remain participant-supplied. Raw competition data are not redistributed; they are acquired through Kaggle under their own CC BY-NC terms.
+
+The classical reference and studied repository require MIT attribution and notices. Their MIT licenses do not relicense third-party dependencies or weights. Ultralytics has a separate AGPL-3.0 license; any detector implementation or weights require their own compliance and provenance review. We do not download the studied author's competition-trained weights, which could have used our held-out source images. V4's controlled study does not depend on external MAGFiLO labels. Ordinary Kaggle GPU is used; ARC-reserved RTX6000 is excluded.
+
+Absolute PQ remains modest, with substantial FP/FN and a later-period decline. The diagnostic sample is limited, and the interventions' effects require the controlled V4 table. We do not claim reliable fine-barb reconstruction, future-cycle robustness, or independent model validation. Routine code review here is same-family and provisional.
+
+The release checklist is \texttt{report/google\_form\_checklist.md}. Finalization requires canonical V4 values, a four-page rendered PDF, participant details, publicly accessible code and required weights, and the organizer's actual form fields. No form is submitted by this draft.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{main}
+\end{document}
