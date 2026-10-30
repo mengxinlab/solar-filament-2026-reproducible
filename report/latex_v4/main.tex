@@ -6,14 +6,15 @@
 \begin{document}
 \title[Temporal Validation for Solar Filament Segmentation]{Solar Filament Instance Segmentation with Temporal Validation and Resolution-Aware Diagnostics}
 \subtitle{A Solution to the Solar Filament Segmentation Challenge 2026}
-\author{Participant name(s) pending}
-\affiliation{\institution{Affiliation pending}\country{Participant to complete}}
-\renewcommand{\shortauthors}{Participant name(s) pending}
+\author{Xin Meng}
+\affiliation{\institution{China Medical University}\country{China}}
+\email{mengxinlab@gmail.com}
+\renewcommand{\shortauthors}{Xin Meng}
 \begin{abstract}
 We study image-only instance segmentation of solar filaments in 2048$\times$2048 grayscale GONG H-alpha observations. A reproducible local-contrast baseline achieved development Panoptic Quality (PQ) 0.177047 and, after selection was frozen, PQ 0.105604 on 49 later observations. A compact whole-frame U-Net and a fixed neural--contrast mixture did not improve the development score. Diagnostics identify low neural responses, sparse positive pixels, and loss of filament scale under whole-frame downsampling, without evidence of input--target misalignment. We therefore prespecify a small native-resolution V4 comparison. Its results are pending in this draft. The first formal Kaggle submission was accepted with Public Score 0.15; this score verifies submission behavior and is excluded from parameter selection.
 \end{abstract}
 \maketitle
-\noindent\textbf{Draft status, 30 October 2026:} participant details and V4 result fields remain pending. Frozen v3 evidence is retained unchanged.
+\noindent\textbf{Draft status, 30 October 2026:} V4 result fields remain pending. Frozen v3 evidence is retained unchanged.
 
 \section{Problem and Data}
 Solar filaments are dark, elongated structures with weak contrast, fine barbs, fragmented visible material, and nearby non-filament dark regions. The competition requires one mask per filament, making instance identity distinct from semantic foreground detection~\cite{competition}. We seek reproducible image-only inference and a validation protocol that exposes temporal failures.
@@ -133,13 +134,13 @@ Report PQ, TP, FP, FN, hit-IoU sum, all period scores, training and inference co
 \section{Reproducibility, Licensing and Limits}
 Versioned source, configuration hashes, source-image memberships, training histories, model checkpoints, predictions, PQ counts, environment freezes, and platform receipts are preserved. v3 canonical artifacts are under \texttt{results/kaggle\_v3/project/}; v4 must use a distinct directory. The notebook illustrates the entire pipeline and loads the selected model for inference without retraining. Fixed seeds do not imply bit-identical trajectories across MPS, CUDA, CPUs, or library versions.
 
-The final release needs a public Git repository, pinned \texttt{requirements.txt}, a complete Jupyter notebook, selected model weights or classical parameters, and this four-page PDF. Author/contact details and the final repository URL remain participant-supplied. Raw competition data are not redistributed; they are acquired through Kaggle under their own CC BY-NC terms.
+The release repository is \url{https://github.com/mengxinlab/solar-filament-2026-reproducible}; its associated public Kaggle notebook is \url{https://www.kaggle.com/code/mengxinlab/solar-filament-2026-reproducible-release}. Final materials include pinned \texttt{requirements.txt}, a complete Jupyter notebook, selected model weights or classical parameters, and this four-page PDF. Raw competition data are not redistributed; they are acquired through Kaggle under their own CC BY-NC terms.
 
 The classical reference and studied repository require MIT attribution and notices. Their MIT licenses do not relicense third-party dependencies or weights. Ultralytics has a separate AGPL-3.0 license; any detector implementation or weights require their own compliance and provenance review. We do not download the studied author's competition-trained weights, which could have used our held-out source images. V4's controlled study does not depend on external MAGFiLO labels. Ordinary Kaggle GPU is used; ARC-reserved RTX6000 is excluded.
 
 Absolute PQ remains modest, with substantial FP/FN and a later-period decline. The diagnostic sample is limited, and the interventions' effects require the controlled V4 table. We do not claim reliable fine-barb reconstruction, future-cycle robustness, or independent model validation. Routine code review here is same-family and provisional.
 
-The release checklist is \texttt{report/google\_form\_checklist.md}. Finalization requires canonical V4 values, a four-page rendered PDF, participant details, publicly accessible code and required weights, and the organizer's actual form fields. No form is submitted by this draft.
+The release checklist is \texttt{report/google\_form\_checklist.md}. Finalization requires canonical V4 values, a four-page rendered PDF, publicly accessible code and required weights, and completion of the organizer's actual form fields. No form is submitted by this draft.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{main}

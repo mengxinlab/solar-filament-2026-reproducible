@@ -1,17 +1,17 @@
 # Final Google Form and release checklist
 
-Prepared 30 October 2026, Asia/Singapore. This is a preparation checklist, **not** a completed form or a claim of eligibility. Participant identity, team membership, contact information and any attestations must be supplied by the participant. No form has been filled or submitted by the agent.
+Prepared 30 October 2026, Asia/Singapore. This is a preparation checklist, **not** a completed form or a claim of eligibility. The participant directly supplied report attribution **Xin Meng (孟昕), China Medical University (中国医科大学), China, mengxinlab@gmail.com**. Team membership and any actual form attestations remain for the participant to complete. No form has been filled or submitted by the agent.
 
 Official entry point: [competition Overview → Final Submission](https://www.kaggle.com/competitions/filament-segmentation-2026/overview). The exact Google Form link read earlier from that section is:
 
 [Organizer final-submission form](https://docs.google.com/forms/d/e/1FAIpQLSfyrM4dhc8QzxR90PtF6fb018KPf0S0Cbf5hPqMuUognmzQsA/viewform?usp=dialog)
 
-The form's live fields have not been inspected in this preparation task. The items below distinguish requirements already read from the official Overview from participant information that still needs human completion. Do not guess additional mandatory fields.
+A read-only attempt to open the actual form on 30 October 2026 redirected to Google sign-in. No login, form filling or submission was performed, so its live field schema remains unverified. The items below distinguish requirements already read from the official Overview from participant information that still needs human completion. Do not guess additional mandatory fields.
 
 ## Required deliverables from the official Overview
 
 - [ ] **One four-page technical-report PDF**, using the [organizer's Overleaf template](https://www.overleaf.com/read/vjztpvrnbrdh#43fbbe). Draft source: `report/v4_technical_report_draft.md`. Compile into the requested template and check that the final PDF is exactly four pages and legible; this Markdown draft has not itself established pagination.
-- [ ] **Public Git-based repository URL.** The committee must access the complete code without permission requests. Fill the participant-approved final URL: [mengxinlab/solar-filament-2026-reproducible](https://github.com/mengxinlab/solar-filament-2026-reproducible). The public repository and associated Kaggle code page are now published.
+- [x] **Public Git-based repository URL.** The parent task published the participant-approved [mengxinlab/solar-filament-2026-reproducible](https://github.com/mengxinlab/solar-filament-2026-reproducible) repository and associated [Kaggle code page](https://www.kaggle.com/code/mengxinlab/solar-filament-2026-reproducible-release). The committee must access the complete code without permission requests. This checklist does not itself create or modify either external resource.
 - [ ] **Pinned `requirements.txt`**, including all packages used by the released pipeline. Retain the exact Kaggle runtime freeze and the wheel/source provenance needed for offline execution. Explain installation and hardware assumptions.
 - [ ] **A Jupyter notebook illustrating the entire pipeline.** Include data acquisition instructions, preprocessing, split construction, training, instance conversion, evaluation and final inference. The final notebook must point to the released selected model and use the exact code/config version, not an interrupted local run.
 - [ ] **Selected model weights or parameters stored in the repository.** For ML/DL selections, provide the trained weights and load them in the notebook so predictions reproduce without retraining. For a classical selection, provide the selected parameter file and complete preprocessing/postprocessing code. Required artifacts must not depend on private or expiring download permissions.
@@ -36,9 +36,9 @@ The form's live fields have not been inspected in this preparation task. The ite
 
 These are preparation prompts, not claims about the current form's exact field schema.
 
-- [ ] Participant and team name: `[participant to supply]`.
+- [x] Participant name: **Xin Meng (孟昕)**. Team name, if the live form requests it: `[participant to supply]`.
 - [ ] Kaggle account/team URL and final selected submission IDs: `[participant to supply]`.
-- [ ] Team-member names, affiliations and contact email requested by the live form: `[participant to supply]`.
+- [x] Report author affiliation and contact: **China Medical University (中国医科大学), China; mengxinlab@gmail.com**. Additional team-member details, if applicable and requested by the live form: `[participant to supply]`.
 - [ ] Confirm one account/team, maximum five members, applicable eligibility and no prohibited private cross-team code/data sharing.
 - [ ] Confirm the participant understands and can explain the complete method, as required for AI/AutoML-assisted solutions.
 - [ ] Complete any actual form attestation and contact/repository-access details personally after reviewing them. Do not supply bank/tax information through this technical-report checklist; any later prize paperwork is a separate organizer process.
@@ -60,4 +60,4 @@ Before the participant submits the form, the reviewable package should contain t
 
 - Public Git: https://github.com/mengxinlab/solar-filament-2026-reproducible
 - Associated competition notebook: https://www.kaggle.com/code/mengxinlab/solar-filament-2026-reproducible-release
-- These are code publications, not Google Form submission. Final report/results and participant identity remain release gates.
+- These are code publications, not Google Form submission. Final report/results and completion of the actual form remain release gates; author attribution is now supplied.

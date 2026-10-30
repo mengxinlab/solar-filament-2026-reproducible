@@ -1,9 +1,12 @@
 # Solar Filament Instance Segmentation with Temporal Validation and Resolution-Aware Diagnostics
 
 **Technical-report draft for Solar Filament Segmentation Challenge 2026**  
-**Authors, affiliation, team and contact:** [participant to complete]  
+**Author:** Xin Meng (孟昕)  
+**Affiliation:** China Medical University (中国医科大学), China  
+**Contact:** mengxinlab@gmail.com  
+**Team name:** [participant to complete if requested]  
 **Evidence cutoff:** 30 October 2026, Asia/Singapore  
-**Status:** v3 results are frozen; V4 experiment results and final release URLs must be populated from their canonical artifacts before submission. This draft is intended for the organizer's four-page template; final pagination is a separate production step.
+**Status:** v3 results are frozen; V4 experiment results must be populated from their canonical artifacts before submission. Public repository: https://github.com/mengxinlab/solar-filament-2026-reproducible . Associated public Kaggle notebook: https://www.kaggle.com/code/mengxinlab/solar-filament-2026-reproducible-release . This draft is intended for the organizer's four-page template; final pagination is a separate production step.
 
 ## Abstract
 
@@ -90,7 +93,7 @@ Source, configuration hashes, image memberships, loss histories, checkpoints, PQ
 
 Release materials comprise a public Git repository, pinned requirements, a complete pipeline notebook, selected model parameters/weights sufficient for inference without retraining, and this four-page report. The raw competition dataset is not redistributed. The classical reference and studied repository require their MIT notices and attribution. Dependencies retain their own licenses; an MIT parent repository does not relicense Ultralytics or detector weights. Any pretrained encoder or detector must have recorded provenance, accessibility and license compatibility. Code review here is same-family/provisional, not independent validation.
 
-Current limitations are low absolute PQ, substantial false-positive/false-negative counts, thin-structure resolution loss, limited diagnostic sampling and temporal shift. The study does not establish robustness to a future solar cycle or reliable fine-barb delineation. Four-page formatting, V4 results, platform receipt, author information, public repository access, weight availability and final Google Form fields remain release gates.
+Current limitations are low absolute PQ, substantial false-positive/false-negative counts, thin-structure resolution loss, limited diagnostic sampling and temporal shift. The study does not establish robustness to a future solar cycle or reliable fine-barb delineation. Four-page formatting, V4 results, selected-weight availability and final Google Form fields remain release gates. Author name, affiliation and email were supplied directly by the participant for public report attribution.
 
 ## References
 
