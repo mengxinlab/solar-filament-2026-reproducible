@@ -97,9 +97,7 @@ Official platform acceptance remains distinct from local format validation.
   are supplied. V4 result documentation and the compiled technical PDF are added
   when canonical experiments are complete; no pending value is invented.
 
-`requirements.txt` records the initial local development stack;
-`requirements-kaggle.txt` pins the GPU packages used in the completed v3 Kaggle
-runtime. Every V4 kernel saves its own full package freeze, source manifest,
+`requirements.txt` and `requirements-kaggle.txt` pin the packages used in the completed Kaggle GPU runtime. `requirements-local-v3.txt` preserves the earlier local development environment. Every V4 kernel saves its own full package freeze, source manifest,
 hardware record, sample draws, losses, prediction CSVs, PQ counts and compute cost.
 Seeds and identical configs do not promise bitwise equality across devices or
 library versions. Do not install the local Torch pin over an active Kaggle image;

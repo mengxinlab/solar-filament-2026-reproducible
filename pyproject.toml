@@ -7,7 +7,7 @@ name = "solar-filament-2026"
 version = "0.1.0"
 description = "Image-only, reproducible Kaggle solar filament segmentation"
 requires-python = ">=3.12,<3.14"
-dependencies = ["numpy==2.1.3", "pandas==2.2.3", "opencv-python-headless==4.13.0.92", "pycocotools==2.0.10", "torch==2.9.1"]
+dependencies = ["numpy==2.1.3", "pandas==2.3.3", "opencv-python-headless==4.14.0.94", "pycocotools==2.0.10", "torch==2.11.0"]
 
 [project.scripts]
 solarseg = "solarseg.cli:main"
